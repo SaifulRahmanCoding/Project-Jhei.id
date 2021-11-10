@@ -22,16 +22,16 @@
 				<ul class="navbar-nav ms-auto">
 
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page"  href="index.php">HOME</a>
+						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">HOME</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page"  href="artikel.php">ARTIKEL</a>
+						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">ARTIKEL</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page"  href="lokasi.php">LOKASI</a>
+						<a class="nav-link <? if($halaman == 'lokasi'){echo 'active';} ?>" aria-current="page"  href="lokasi.php">LOKASI</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page"  href="about.php">ABOUT</a>
+						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="about.php">ABOUT</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN </a>

@@ -48,4 +48,4 @@ $(document).ready(function() {
 //     document.body.style.paddingTop = navbar_height + 'px';
 
 //   }); 
-//   // DOMContentLoaded  end
+  // DOMContentLoaded  end

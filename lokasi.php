@@ -1,4 +1,5 @@
 <?
+$halaman = 'lokasi';
 // koneksi ke database
 require_once('koneksi.php');
 

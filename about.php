@@ -1,4 +1,5 @@
 <?
+$halaman = 'about';
 // koneksi ke database
 require_once('koneksi.php');
 
