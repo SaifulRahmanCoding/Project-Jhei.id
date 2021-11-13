@@ -1,27 +1,26 @@
 <?
+$halaman = 'artikel';
 // koneksi ke database
 require_once('koneksi.php');
 
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
 
-if (isset($_GET['id_promo'])) {
-	$idPromo = $_GET['id_promo'];
+if (isset($_GET['id_artikel'])) {
+	$idArtikel = $_GET['id_artikel'];
 }
 else {
-	echo "ID Promo tidak ditemukan! <a href='promo.php'>Kembali</a>";
+	echo "ID Artikel tidak ditemukan! <a href='artikel.php'>Kembali</a>";
 	exit();
 }
 
-$query = "SELECT * FROM promo WHERE id_promo = '$idPromo'";
+$query = "SELECT * FROM artikel WHERE id_artikel = '$idArtikel'";
 $result = mysqli_query($db,$query);
-foreach($result as $promo){
-	$idPromo = $promo['id_promo'];
-	$foto = $promo['foto'];
-	$namaPromo = $promo['nama_promo'];
-	$hargaNormal = $promo['harga_normal'];
-	$hargaPromo = $promo['harga_promo'];
-	$keterangan = $promo['keterangan'];
+foreach($result as $artikel){
+	$idArtikel = $artikel['id_artikel'];
+	$foto = $artikel['foto'];
+	$judul = $artikel['judul'];
+	$konten = $artikel['konten'];
 }
 ?>
 <!DOCTYPE html>
@@ -39,112 +38,75 @@ foreach($result as $promo){
 </head>
 <body>
 	<!-- header -->
-	<div id="header">
-		<?
-		require('komponen/navbar.php');
-		?>
-	</div>
+	<?
+	require('komponen/navbar.php');
+	require ('komponen/kontak-wa.php');
+	require('komponen/mikro-komponen/pesan-modal.php');
+	?>
 
-	<div id="detail-promo">
+	<div id="detail-artikel">
+
 		<div class="container">
-				
-			<div class="row mt-3 mb-5">
-				<h2 class="text-center mb-5">Detail Dari Promo</h2>
-				<div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-end">
-					<div class="col-10 col-sm-11 col-lg-8">
-						
-					<img src="<?=$foto?>" style="width: 100%; max-height: 450px; object-fit: cover;" alt="">
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 ps-3 ps-sm-5 mt-3 mt-sm-0">
-					<div class="row d-flex justify-content-center justify-content-sm-start">
-						<div class="col-10 col-sm-11 col-lg-8" style="border: 3px solid #ECECEC; border-radius: 3%;">
-							
-							<h3 class="mt-3 mb-3 mb-sm-5 text-center" style="font-family: verdana;"><?=$namaPromo?></h3>
-							<p>
-								<a class="fw-bolder text-decoration-none text-dark">Harga :</a> Rp. <?=$hargaPromo?> <a class="text-decoration-line-through text-secondary">Rp. <?=$hargaNormal?></a>
-							</p>
-							<p class="mb-5"><a class="fw-bolder text-decoration-none text-dark">Keterangan :</a><br>
-								<?=$keterangan?>
-							</p>
-							<a href="#" class="btn col-12 text-decoration-none  text-sm-start p-2 d-flex justify-content-center mb-4 fw-bolder text-white" style="background-color: coral;">Beli Harga Promo</a>
-						</div>
-					</div>
-				</div>
+			<div class="back">
+				<a href="artikel.php" class="text-decoration-none">Kembali Ke Halaman Postingan</a>
 			</div>
-		</div>
-	</div>
+			<div class="row mt-3 mb-5">
 
-	<!-- katalog -->
-	<div id="promo" class="mt-5 pt-3">
+				<div class="col-12 col-sm-8">
 
-		<div class="container">
-			<p class="judul-promo">Promo Lain</p>
-			<!-- strat row -->
-			<div id="autoWidth" class="cs-hidden mb-4 mt-2">
+					<div class="col-12 d-flex flex-column justify-content-center p-3 p-sm-4 p-lg-5 shadow" style="border: 1px solid #D4D4D4;">
+						<div class="text-center mb-2">
+							<h2 class="judul-artikel-detail mb-2 mb-sm-4"><?=$artikel['judul'];?></h2>
+							<img src="<?=$foto?>" style="width: 80%;" alt="">
+						</div>
+						<p><?=$konten?></p>
+					</div>
 
-				<?
-				// pemanggilan data dari tabel promo
-				$query= "SELECT * FROM promo ORDER BY id_promo DESC";
-				$result = mysqli_query($db, $query);
-				// foreach
-				foreach ($result as $promo) {
+				</div>
 
-				 // cek foto
-					if (!file_exists($promo['foto'])) {
-						$promo['foto']='upload/default.png';
-					}
+				<div class="col-12 col-sm-4 pt-5 pt-sm-0 mt-3 mt-sm-0" id="sidebar-artikel">
+					<div class="row">
 
-					if (is_null($promo['foto'])||empty($promo['foto'])) {
-						$promo['foto']='upload/default.png';
-					}
+						<h3 class="text-center mb-3 mb-sm-2">Artikel Terbaru</h3>
+						<?
+						$query = "SELECT * FROM artikel ORDER BY id_artikel DESC LIMIT 0,5";
+						$result = mysqli_query($db,$query);
+						foreach($result as $artikel){
+							?>
+							<div class="col-6 col-sm-12 ps-1 pe-1">
 
-					$harga_normal = $promo['harga_normal'];
-					$harga_promo = $promo['harga_promo'];
-					$format_normal = number_format($harga_normal,0,",",".");
-					$format_promo = number_format($harga_promo,0,",",".");
+								<a href="detail.php?id_artikel=<?=$artikel['id_artikel']?>" class="text-decoration-none text-dark">
+									<div class="col-12 box-side row pt-2 pb-2 mb-2 d-flex flex-column-reverse flex-sm-row ms-0" style="border: 1px solid #D4D4D4;">
 
-					$hitung = $promo['harga_normal'] - $promo['harga_promo'];
-					$diskon = ($hitung / $promo['harga_normal']) * 100;
-					?>
-					<!--box promo-->
-					<div class="slider">
-						<div class="card mb-2 shadow-sm">
-							<div class="foto-promo">
-								<img src='<?=$promo['foto']?>' class='card-img-top'>
-								<div class="segitiga"></div>
-								<p class="diskon">Diskon<br><?=round($diskon,1)?>%</p>
+										<div class="judul-sidebar-artikel col-12 col-sm-7 col-lg-9">
+											<?
+											if (strlen($artikel['judul'])>52) {
+												echo substr($artikel['judul'],0,52)."...";
+
+											}else{echo $artikel['judul'];}
+											?>
+										</div>
+										<div class="col-12 col-sm-5 col-lg-3"><img src="<?=$artikel['foto'];?>" alt="" style="width: 100%;"></div>
+
+									</div>
+								</a>
+
 							</div>
-							<div class="card-body">
-								<p class="card-title fw-bolder">
-									<?
-									if (strlen($promo['nama_promo'])>28) {
-										echo substr($promo['nama_promo'],0,28)."...";
 
-									}else{echo $promo['nama_promo'];}
-									?>
-
-
-								</p>
-								<a class="card-text fw-bolder fs-6 text-decoration-none text-dark">Rp. <?=$format_promo?></a><br>
-								<a class="card-text text-decoration-line-through text-dark">Rp. <?=$format_normal?></a> 
-								<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
-									<a href="detail.php?id_promo=<?=$promo['id_promo']?>" class="detail text-decoration-none fw-bolder">Detail</a>
-								</p>
-							</div>
+							<?}?>
 						</div>
 					</div>
-					<!-- end box promo -->
-					<?}?>
-					<!-- end foreach -->
+
+
+
 				</div>
-				<!-- end row -->
+
 			</div>
 			<!-- end container -->
 		</div>
 
-	<?
-	require('komponen/footer.php');
-	?>
-</body>
-</html>
+		<?
+		require('komponen/footer.php');
+		?>
+	</body>
+	</html>

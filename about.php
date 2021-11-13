@@ -30,7 +30,7 @@ require_once('session_check.php');
 				<div class="row mb-2">
 					
 					<div class="col-12 col-sm-7 col-lg-7">
-						<img src="img/produk-l.jpg" alt="" style="width:100%;">
+						<img src="src/img/carousel/carousel-produk-2.jpg" alt="" style="width:100%;">
 					</div>
 					<div class="col-kanan col-12 col-sm-5 col-lg-5 p-0 mt-2 mb-2 shadow-sm">
 						<div class="col-12 pt-3 fs-4 fw-bolder">
@@ -50,6 +50,7 @@ require_once('session_check.php');
 			</div>
 		</div>
 	<?
+	require('komponen/carousel.php');
 	require('komponen/footer.php');
 	?>
 </body>

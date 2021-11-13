@@ -93,7 +93,7 @@ foreach($result as $produk){
 						<div class="col-12 d-flex justify-content-center">
 							<input type="submit" name="submit" value="Edit" class="btn text-white col-6 mt-3 mb-3">
 							&nbsp
-							<a href="produk.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
+							<a href="index.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
 						</div>
 
 					</form>

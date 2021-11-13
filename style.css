@@ -15,6 +15,10 @@
 	font-family: ZillaSlab-Italic;
 	src: url('fonts/ZillaSlab-Italic.ttf');
 }
+@font-face {
+	font-family: ZillaSlab-Medium;
+	src: url('fonts/ZillaSlab-Medium.ttf');
+}
 * {
 	font-family: "calibri";
 	/*font-family: 'PT Serif', serif;*/
@@ -24,7 +28,7 @@ body{
 
 }
 .card{
-	border: none;
+	border: 1px solid #D4D4D4 !important;
 }
 .container{
 	/*margin-top: 50px !important;*/
@@ -60,11 +64,11 @@ body{
 /*caption landing page*/
 .landing-page .judul{
 	font-size: 50px;
-	font-family: 'Poppins-Bold', sans-serif;
+	font-family: ZillaSlab-Medium;
 }
 .landing-page .judul a{
 	font-size: 42px;
-	font-family: 'Poppins-Bold', sans-serif;
+	font-family: ZillaSlab-Medium;
 	background-color: coral;
 
 }
@@ -96,7 +100,7 @@ body{
 	margin: 0;
 }
 .navbar-brand p{
-	font-family: ZillaSlab-Italic;
+	font-family: ZillaSlab-Medium;
 	display: flex;
 	align-items: center;
 }
@@ -136,12 +140,10 @@ body{
 .navbar-collapse.collapse.show li:hover{
 	border-bottom: none;
 }
-.navbar-collapse.collapse.show .dropdown-menu li a:hover{
-	box-shadow: none;
+.navbar-collapse.collapse.show .active{
+	box-shadow: none !important;
 }
-.navbar-collapse.collapse.show .dropdown-menu li a:focus, .dropdown-menu li a:focus{
-	background-color: coral !important;
-}
+
 /*end show menu*/
 /*end nav*/
 
@@ -164,10 +166,11 @@ body{
 
 }
 #form h3, #form h2{
-	font-family: 'Poppins-Regular', sans-serif;
+	font-family: ZillaSlab-Medium;
+	font-size: 40px;
 }
 #form img{
-	width: 50%;
+	width: 30%;
 }
 #form .btn{
 	background-color: coral;
@@ -210,6 +213,7 @@ input:focus, .btn:focus, .navbar-toggler:focus, .accordion-button:focus, textare
 	box-shadow:  0px 0px 4px 0px rgba(0, 0, 0, 0.3);
 	background-color: #01F118;
 	cursor: pointer;
+	transition: 0.5s;
 
 }
 #kontak .keterangan.wa{
@@ -217,6 +221,12 @@ input:focus, .btn:focus, .navbar-toggler:focus, .accordion-button:focus, textare
 	text-align: center;
 	border-radius: 20px;
 	display: none;
+	transition: 0.5s;
+}
+#wa:hover{
+	transform: scale(1.2);
+	transition: 0.5s;
+
 }
 /*end kontak*/
 
@@ -312,10 +322,11 @@ input:focus, .btn:focus, .navbar-toggler:focus, .accordion-button:focus, textare
 	font-size: 14px;
 }
 #footer .row.footer-2 p{
-	font-size: 10px;
+	font-size: 16px;
 	margin: 0;
 }
 .contact-us li a{
+	color: #FFFFFF !important;
 	text-decoration: none;
 	color: #000;
 }
@@ -408,22 +419,43 @@ iframe{
 	color: #FFFFFF !important;
 }
 #artikel .lain-nya a{
-	color: coral;
-	box-shadow: 0px 0px 0px 2px coral;
-	transition: 0.5s;
-	border-radius: 10px;
-}
-#artikel .lain-nya a:hover{
 	color: white;
-	transition: 0.5s;
 	background-color: coral;
-	box-shadow: none;
+	transition: 0.5s;
 }
+#artikel .judul-artikel p{
+	font-family: ZillaSlab-Medium;
+	/*font-size: 16px;*/
+}
+#artikel .lain-nya{
+	transition: 0.5s;
+}
+#artikel .lain-nya:hover{
+	transform: scale(1.05);
+	transition: 0.5s;
+	box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.3);
+}
+#artikel .card{
+	transition: 0.5s;
+}
+#artikel .card:hover{
+	transition: 0.5s;
+	transform: scale(1.01);
+	box-shadow: 0px 1px 15px 1px rgba(0, 0, 0, 0.3) !important;
+	
+}
+/*#artikel .card{
+	transition: 0.5s;
+}
+#artikel .card:hover{
+	transform: scale(1.1);
+	transition: 0.5s;
+}*/
 .modal-footer p{
 	text-align: justify;
 }
 
-#info-produk .row img{
+#info-produk .row .foto-produk-awal{
 	width: 100%;
 	border-radius: 50%;
 	object-fit: cover;
@@ -431,7 +463,7 @@ iframe{
 #info-produk .caption{
 	text-align: justify;
 }
-#info-produk h3, #info-produk h1, .modal-body .col-12.judul-artikel h1{
+#info-produk h3, #info-produk h1, .modal-body .col-12.judul-artikel h1, .judul-sidebar-artikel, .judul-artikel-detail{
 	font-family: ZillaSlab-Italic;
 }
 
@@ -443,32 +475,48 @@ iframe{
 	color: white;
 }
 .detail-produk{
-	box-shadow: 0px 0px 0px 2px coral;
-	border-radius: 10px;
-	color: coral;
+	background-color: coral;
+	color: white;
+	/*border-radius: 10px;*/
 	transition: 0.5s;
 }
 .detail-produk:hover{
-	background-color: coral;
-	box-shadow: none;
 	color: white;
 	transition: 0.5s;
 	border: 0;
+	transform: scale(1.1);
+	box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
 }
 #pesanModal .modal-body{
-	background-image: url('img/background.jpg');
+	/*background-image: url('img/background.jpg');*/
 }
 #pesanModal label{
 	font-size: 20px;
 }
-.active{
+nav .active{
 	box-shadow: 0px 4px 0px -2px coral;
-
 }
-
-
-
-
+#carouselslide img{
+	width: 100%;
+	max-height: 550px;
+	/*object-fit: cover;*/
+}
+figure{
+	text-align: center !important;
+}
+figure img{
+	width: 80%;
+	max-height: 300px;
+}
+#sidebar-artikel a .box-side{
+	box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.1) !important;
+	transition: 0.5s;
+}
+#sidebar-artikel a .box-side:hover{
+	transition: 0.5s;
+	transform: scale(1.02);
+	box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2) !important;
+}
 
 
 
@@ -479,6 +527,9 @@ iframe{
 	}
 	.landing-page .subjudul{
 		font-size: 13px;
+	}
+	#form img{
+		width: 50%;
 	}
 }
 
@@ -512,11 +563,18 @@ iframe{
 	.card-body .card-text.ket{
 		font-size: 0.8rem;
 	}
-	/*#info-produk .row .modal-body img{
-		width: 100%;
-	}*/
-
-}
+	#form img{
+		width: 50%;
+	}
+	#carouselslide img{
+		max-height: 350px;
+	}
+	#detail-artikel .judul-sidebar-artikel{
+		font-size: 12px !important;
+	}
+	.active{
+		box-shadow: none !important;
+	}
 
 @media screen and (max-width: 578px){
 	#footer .row.footer-1 .col h6{
@@ -587,10 +645,14 @@ iframe{
 	.gradient{
 		font-size: 12px;
 	}
-	/*#info-produk .row .modal-body img{
-		width: 100%;
-	}*/
+	
 	.detail-produk{
 		box-shadow: 0px 0px 0px 1px coral;
+	}
+	#form img{
+		width: 80%;
+	}
+	.active{
+		box-shadow: none !important;
 	}
 }

@@ -1,5 +1,5 @@
 <!-- promo -->
-<div id="promo" class="mt-5 pt-5 bg-light">
+<div id="promo" class="mt-3 pt-5">
 
 	<div class="container">
 

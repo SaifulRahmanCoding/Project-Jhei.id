@@ -6,7 +6,7 @@
 			<!-- navbar brand -->
 			<a class="navbar-brand">
 				<img src="img/Jhei.id.png" />
-				<p class="mb-0">Jhei.id</p>
+				<p class="mb-0">Jhei-id</p>
 			</a>
 
 			<!-- navbar toggler -->
@@ -25,7 +25,7 @@
 						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">HOME</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">ARTIKEL</a>
+						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">PRODUK</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link <? if($halaman == 'lokasi'){echo 'active';} ?>" aria-current="page"  href="lokasi.php">LOKASI</a>
@@ -33,30 +33,16 @@
 					<li class="nav-item">
 						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="about.php">ABOUT</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN </a>
-
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<? if ($sessionStatus) : ?>
-								<li>
-									<a class="dropdown-item" href="promo.php">EDIT PROMO</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="registration.php">REGISTRASI AKUN
-									</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="logout.php">LOGOUT <i class="fa  fa-sign-out-alt"></i></a>
-								</li>
-							<? else : ?>
-								<li>
-									<a class="dropdown-item" href="login.php">LOGIN <i class="fa fa-sign-in-alt"></i>
-									</a>
-								</li>
-							<? endif; ?>
-						</ul>
-
+					<? if ($sessionStatus) : ?>
+					<li class="nav-item">
+						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="pemilik.php">ADMIN</a>
 					</li>
+					<? else : ?>
+					<li class="nav-item">
+						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="login.php">LOGIN</a>
+					</li>
+					<? endif; ?>
+					
 				</ul>
 
 			</div>

@@ -24,16 +24,8 @@
 
 						<div class="form-group mb-3">
 							<label for="alamat" class="mb-2">Alamat</label>
-							<textarea name="alamat" class="form-control" id="alamat" rows="8" placeholder="Isikan Alamat Tujuan Pengiriman Produk"></textarea>
+							<textarea name="alamat" class="form-control" id="alamat" rows="3" placeholder="Isikan Alamat Tujuan Pengiriman Produk"></textarea>
 						</div>
-
-						<!-- <div class="form-group mb-3">
-
-							<label for="kodePos" class="mb-2">Kode Pos</label>
-
-							<input name="kodePos" id="kodePos"  class="form-control" type="number" placeholder="kodePos" required>
-
-						</div> -->
 
 						<div class="form-group mb-3">
 							<label for="pesanan" class="mb-2">Pesanan</label>

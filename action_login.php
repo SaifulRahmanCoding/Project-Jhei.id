@@ -56,7 +56,7 @@ else{
 	$_SESSION['name'] = $data['nama'];
 	$_SESSION['email'] = $data['email'];
 
-	header("Location: index.php");
+	header("Location: pemilik.php");
 }
 
 ?>

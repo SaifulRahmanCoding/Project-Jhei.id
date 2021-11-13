@@ -55,9 +55,9 @@ foreach($result as $artikel){
 
 			<div class="row d-flex justify-content-center">
 
-				<div class="col-12 p-5 bg-white">
+				<div class="col-12 p-5">
 
-					<h3 align="center" class="mb-2">Edit Artikel</h3>
+					<h3 align="center" class="mb-5">Edit Artikel</h3>
 
 					<form action="action_edit_artikel.php" method="POST" enctype="multipart/form-data">
 

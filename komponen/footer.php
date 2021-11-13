@@ -1,4 +1,4 @@
-<div id="footer" class="bg-light">
+<div id="footer" class="bg-dark">
 	<div class="container">
 		
 		<div class="row footer-1 d-flex justify-content-center pt-2">
@@ -7,14 +7,7 @@
 					<img src="img/jhei.id.png" alt="logo">
 			</div>
 			<div class="col col-12 col-sm-5 d-flex justify-content-start">
-				<div class="col col-12 text-dark mt-3">
-					<h6>ABOUT US</h6>
-					<ul>
-						<li>
-							<p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Fugit, est? Quidem laboriosam placeat est, veritatis nemo impedit sunt officia laborum.</p>
-						</li>
-						<li></li>
-					</ul>
+				<div class="col col-12 mt-3 text-white">
 					<h6>CONTACT US</h6>
 					<ul class="contact-us">
 						<li>
@@ -26,14 +19,14 @@
 				</div>
 			</div>
 			<div class="col col-12 col-sm-4 d-flex justify-content-end">
-				<div class="col col-12 text-dark mt-3">
+				<div class="col col-12 text-white mt-3">
 					<h6>ALAMAT</h6>
 					<ul>
 						<li>Jl.Telur Asin, Desa Bebek, Kec.Gaharu, Kab.Nunao</li>
 					</ul>
 					<ul>
 						<h6>LIHAT TEMPAT PENJUAL</h6>
-						<li><a href="lokasi.php" class="text-dark">KUNJUNGI</a></li>
+						<li><a href="lokasi.php" class="text-white">KUNJUNGI</a></li>
 					</ul>
 				</div>
 			</div>
@@ -41,8 +34,8 @@
 		</div>
 
 		<div class="row footer-2 pt-2 pb-2">
-			<div class="col-12 text-center text-dark">
-				<p>Copyright 2021 - Ndok Donlad Borobudur</p>
+			<div class="col-12 text-center text-white">
+				<p>© 2021 - Jhei-id</p>
 			</div>
 		</div>
 

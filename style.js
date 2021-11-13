@@ -36,16 +36,5 @@ $(document).ready(function() {
     $(".keterangan.wa").toggle();
   });  
 });
-// document.addEventListener("DOMContentLoaded", function(){
-    
-//     var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-//       target: '#main_nav',
-//       offset: 200
-//     })
 
-//     // add padding top to show content behind navbar
-//     navbar_height = document.querySelector('.navbar').offsetHeight;
-//     document.body.style.paddingTop = navbar_height + 'px';
 
-//   }); 
-  // DOMContentLoaded  end
