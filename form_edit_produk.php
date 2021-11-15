@@ -38,76 +38,84 @@ foreach($result as $produk){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Edit Produk</title>
 	<?
-	require('config/style.php');
-	require('config/script.php');
+	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
-	<div id="header">
-		<?
-		require('komponen/navbar.php');
-		?>
-	</div>
+	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
+		<? require('komponen/sidebar-admin.php'); ?>
+		<!-- Page content wrapper-->
+		<div id="page-content-wrapper">
+			
+			<!-- top nav -->
+			<? require('komponen/top-nav-admin.php'); ?>
 
-	<div id="form" class="pt-5">
-		
-		<div class="container">
+			<!-- Page content-->
+			<div class="container-fluid">
 
-			<div class="row d-flex justify-content-center">
+				<!-- konten -->
+				<div id="form">
 
-				<div class="col-12 p-5 bg-white">
+					<div class="container">
 
-					<h3 align="center" class="mb-2">Edit Produk</h3>
+						<div class="row d-flex justify-content-center">
 
-					<form action="action_edit_produk.php" method="POST" enctype="multipart/form-data">
+							<div class="col-12 p-3 p-sm-5 bg-white">
 
-						<input type="hidden" name="idProduk" value='<? echo $idProduk;?>'>
+								<h3 align="center" class="mb-2">Edit Produk</h3>
 
-						<div class="form-group mb-3 text-center">
-							<img src="<?=$foto?>" class="preview">
+								<form action="action_edit_produk.php" method="POST" enctype="multipart/form-data">
+
+									<input type="hidden" name="idProduk" value='<? echo $idProduk;?>'>
+
+									<div class="form-group mb-3 text-center">
+										<img src="<?=$foto?>" class="preview">
+									</div>
+
+									<div class="form-group mb-2">
+
+										<label for="foto" class="mb-2">Ganti Foto Produk</label>
+
+										<input name="foto" id="foto" class="form-control" type="file">
+
+										<p class="text-danger">*usahakan rasio 1 : 1 atau square</p>
+
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="namaProduk" class="mb-2">Nama Produk</label>
+
+										<input name="namaProduk" id="namaProduk"  class="form-control" type="text" value="<?=$namaProduk?>" placeholder="Nama Produk" required>
+
+									</div>
+
+									<div class="form-group mb-3">
+										<label for="caption" class="mb-2">Caption</label>
+										<textarea name="caption" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi caption produk"><?=$caption?></textarea>
+									</div>
+
+									<div class="col-12 d-flex justify-content-center">
+										<input type="submit" name="submit" value="Edit" class="btn text-white col-6 mt-3 mb-3">
+										&nbsp
+										<a href="admin-produk.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
+									</div>
+
+								</form>
+
+							</div>
+
 						</div>
 
-						<div class="form-group mb-2">
-
-							<label for="foto" class="mb-2">Ganti Foto Produk</label>
-
-							<input name="foto" id="foto" class="form-control" type="file">
-
-							<p class="text-danger">*usahakan rasio 1 : 1 atau square</p>
-
-						</div>
-
-						<div class="form-group mb-3">
-
-							<label for="namaProduk" class="mb-2">Nama Produk</label>
-
-							<input name="namaProduk" id="namaProduk"  class="form-control" type="text" value="<?=$namaProduk?>" placeholder="Nama Produk" required>
-
-						</div>
-
-						<div class="form-group mb-3">
-							<label for="caption" class="mb-2">Caption</label>
-							<textarea name="caption" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi caption produk"><?=$caption?></textarea>
-						</div>
-
-						<div class="col-12 d-flex justify-content-center">
-							<input type="submit" name="submit" value="Edit" class="btn text-white col-6 mt-3 mb-3">
-							&nbsp
-							<a href="index.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
-						</div>
-
-					</form>
+					</div>
 
 				</div>
+				<!-- end form input -->
 
 			</div>
-
 		</div>
-
 	</div>
-	<!-- end form input -->
-	<?
-	require('komponen/footer.php');
-	?>
+	<?require('config/scriptAdmin.php');?>
+
 </body>
 </html>

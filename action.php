@@ -1,7 +1,10 @@
 <?
 // koneksi ke database
 require_once('koneksi.php');
-
+require_once('session_check.php');
+if ($sessionStatus == false) {
+	header("Location: index.php");
+}
 // Memvalidasi inputan
 if (isset($_POST['namaPromo'])) {
 	$namaPromo = $_POST['namaPromo'];

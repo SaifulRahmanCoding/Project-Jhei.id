@@ -80,8 +80,8 @@ foreach($result as $artikel){
 
 										<div class="judul-sidebar-artikel col-12 col-sm-7 col-lg-9">
 											<?
-											if (strlen($artikel['judul'])>52) {
-												echo substr($artikel['judul'],0,52)."...";
+											if (strlen($artikel['judul'])>48) {
+												echo substr($artikel['judul'],0,45)."...";
 
 											}else{echo $artikel['judul'];}
 											?>
@@ -96,8 +96,6 @@ foreach($result as $artikel){
 							<?}?>
 						</div>
 					</div>
-
-
 
 				</div>
 

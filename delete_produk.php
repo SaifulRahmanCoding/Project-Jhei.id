@@ -27,6 +27,6 @@ if (!$result) {
 	exit("Gagal Menghapus Data!");
 }
 
-header("Location:produk.php");
+header("Location:admin-produk.php");
 
 ?>

@@ -30,9 +30,6 @@ require_once('session_check.php');
 		<div class="container">
 			<p class="judul-produk text-center mt-3 mt-sm-5">TERBARU DARI KAMI</p>
 			<p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, veniam?</p>
-			<? if ($sessionStatus) : ?>
-				<a href="form_artikel.php" class="btn add artikel text-success mt-2 mb-3">Tambah</a>
-			<? endif ?>
 			<div class="row mt-3 mt-sm-5 mb-4">
 			<?
 			$filter = " ";

@@ -1,6 +1,10 @@
 <?
 // koneksi ke database
 require_once('koneksi.php');
+require_once('session_check.php');
+if ($sessionStatus == false) {
+	header("Location: index.php");
+}
 
 if (isset($_POST['judulArtikel'])) {
 	$judulArtikel = $_POST['judulArtikel'];
@@ -50,7 +54,7 @@ if ($insert == false) {
 	echo "Error dalam menambah data ke database. <a href='form_artikel.php.php'>Kembali</a>";
 }
 else{
-	header("Location: index.php");
+	header("Location: admin-postingan.php");
 }
 ?>
 

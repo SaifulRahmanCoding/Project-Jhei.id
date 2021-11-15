@@ -1,9 +1,9 @@
 <!-- Top navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
 
 	<div class="container-fluid">
 		
-		<button class="navbar-toggler" id="sidebarToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler text-white" id="sidebarToggle" type="button">
 
 			<span class="navbar-toggler-icon"></span>
 
@@ -11,7 +11,7 @@
 		<ul class="navbar-nav ms-auto d-flex flex-row">
 
 			<li class="nav-item">
-				<a class="nav-link" aria-current="page"  href="index.php">MENUJU WEB</a>
+				<a class="nav-link" aria-current="page"  href="index.php">LIHAT&nbspWEB</a>
 			</li>
 			<li class="nav-item">
 				

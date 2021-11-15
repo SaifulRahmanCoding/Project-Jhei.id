@@ -89,7 +89,7 @@ if ($insert == false) {
 	echo "Error dalam mengubah data. <a href='form_edit_artikel.php'>Kembali</a>";
 }
 else{
-	header("Location: artikel.php");
+	header("Location: admin-postingan.php");
 }
 
 ?>

@@ -27,6 +27,6 @@ if (!$result) {
 	exit("Gagal Menghapus Data!");
 }
 
-header("Location:artikel.php");
+header("Location:admin-postingan.php");
 
 ?>

@@ -2,6 +2,11 @@
 // koneksi ke database
 require_once('koneksi.php');
 
+require_once('session_check.php');
+if ($sessionStatus == false) {
+	header("Location: index.php");
+}
+
 if (isset($_POST['namaProduk'])) {
 	$namaProduk = $_POST['namaProduk'];
 }
@@ -50,6 +55,6 @@ if ($insert == false) {
 	echo "Error dalam menambah data ke database. <a href='form_produk.php.php'>Kembali</a>";
 }
 else{
-	header("Location: index.php");
+	header("Location: admin-produk.php");
 }
 ?>

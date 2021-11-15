@@ -62,7 +62,7 @@ if ($insert == false) {
 	?>
 		<div style="background: green; padding: 20px; color: white;">
 			<h2>Sukses Buat Akun!</h2><br>
-			<a href="index.php">Beranda </a>
+			<a href="pemilik.php">Beranda </a>
 			<a href="login.php">Login</a>
 		</div>
 	<?

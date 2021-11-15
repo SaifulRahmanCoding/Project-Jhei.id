@@ -58,7 +58,7 @@ foreach($result as $promo){
 
 			<div class="row d-flex justify-content-center">
 
-				<div class="col-12 p-5 bg-white">
+				<div class="col-12 p-3 p-sm-5 bg-white">
 
 					<h3 align="center" class="mb-2">Edit Promo</h3>
 

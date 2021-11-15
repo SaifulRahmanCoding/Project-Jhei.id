@@ -25,7 +25,7 @@
 						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">HOME</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">PRODUK</a>
+						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">POSTINGAN</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link <? if($halaman == 'lokasi'){echo 'active';} ?>" aria-current="page"  href="lokasi.php">LOKASI</a>
@@ -35,11 +35,11 @@
 					</li>
 					<? if ($sessionStatus) : ?>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="pemilik.php">ADMIN</a>
+						<a class="nav-link" aria-current="page"  href="pemilik.php">ADMIN</a>
 					</li>
 					<? else : ?>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="login.php">LOGIN</a>
+						<a class="nav-link" aria-current="page"  href="login.php">LOGIN</a>
 					</li>
 					<? endif; ?>
 					

@@ -32,7 +32,7 @@ require_once('session_check.php');
 			
 			<div class="row d-flex justify-content-center">
 				
-				<div class="col col-10 col-sm-8 col-lg-6 p-5 bg-white"> 
+				<div class="col col-11 col-sm-6 col-lg-5 p-5 bg-white"> 
 
 					<div class="label-form mb-1 p-2">
 						<h2 align="center"><i class="fas fa-user-circle"></i><br>Login</h2>
@@ -54,9 +54,9 @@ require_once('session_check.php');
 
 						</div>
 						
-						<p class="label-form mt-4 mb-2">
+						<!-- <p class="label-form mt-4 mb-2">
 							*jika tidak memiliki akun, silahkan <a href="registration.php">Registrasi</a>
-						</p>
+						</p> -->
 
 						<input name="submit" type="submit" value="Masuk" class="btn text-white mt-3 mb-3 col-12">
 
