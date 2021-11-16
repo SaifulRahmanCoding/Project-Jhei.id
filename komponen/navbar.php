@@ -22,7 +22,7 @@
 				<ul class="navbar-nav ms-auto">
 
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">HOME</a>
+						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">BERANDA</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">POSTINGAN</a>
@@ -31,7 +31,7 @@
 						<a class="nav-link <? if($halaman == 'lokasi'){echo 'active';} ?>" aria-current="page"  href="lokasi.php">LOKASI</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="about.php">ABOUT</a>
+						<a class="nav-link <? if($halaman == 'about'){echo 'active';} ?>" aria-current="page"  href="about.php">TENTANG</a>
 					</li>
 					<? if ($sessionStatus) : ?>
 					<li class="nav-item">
