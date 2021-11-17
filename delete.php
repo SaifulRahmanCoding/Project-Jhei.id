@@ -10,15 +10,15 @@ if ($sessionStatus == false) {
 }
 
 //mendapatkan data produk dari Database
-if (isset($_GET['id_promo'])) {
-	$idPromo = $_GET['id_promo'];
+if (isset($_GET['id_carousel'])) {
+	$id_carousel = $_GET['id_carousel'];
 }
-else{ echo "ID tidak ditemukan! <a href='promo.php'>Kembali</a>";
+else{ echo "ID tidak ditemukan! <a href='admin-carousel.php'>Kembali</a>";
 	exit();
 }
 
 // Query Get data produk
-$query = "DELETE FROM promo WHERE id_promo = '$idPromo'";
+$query = "DELETE FROM carousel WHERE id_carousel = '$id_carousel'";
 
 // eksekusi Query
 $result = mysqli_query($db,$query);
@@ -27,6 +27,6 @@ if (!$result) {
 	exit("Gagal Menghapus Data!");
 }
 
-header("Location:promo.php");
+header("Location:admin-carousel.php");
 
 ?>

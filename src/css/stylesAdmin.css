@@ -340,6 +340,7 @@ button {
 
 button:focus:not(:focus-visible) {
   outline: 0;
+  border: none;
 }
 input,
 button,
@@ -4065,6 +4066,7 @@ textarea.form-control-lg {
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
+  color: black !important;
 }
 .navbar-nav .dropdown-menu {
   position: static;
@@ -11293,14 +11295,14 @@ textarea.form-control-lg {
   width: 100px;
 }
 .navbar{
-  background-color: coral !important;
+  background-color: white !important;
   border: none !important;
 }
 .nav-link{
   color: white !important;
 }
 .sidebar-heading{
-  background-color: #E86130;
+  background-color: #383838;
   border: none !important;
 }
 .border-end{
@@ -11339,6 +11341,44 @@ body.sb-sidenav-toggled #sidebar-wrapper {
   border-bottom: 1px solid #E5E5E5;
   /*background-color: #FFE9E1 !important;*/
 }
+#carousel-admin img{
+  min-width: 400px;
+}
+
+#dashboard .bungkus{
+  border-left: 10px solid #0072FF;
+  background-color: white;
+}
+#dashboard .bungkus2{
+  border-left: 10px solid green;
+  background-color: white;
+}
+#dashboard .bungkus3{
+  border-left: 10px solid red;
+  background-color: white;
+}
+
+#dashboard i{
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#wrapper{
+  /*background-color: #F4F4F4;*/
+}
+table{
+  background-color: white;
+}
+#dashboard .box-produk h1{
+  color: #0072FF;
+}
+#dashboard .box-postingan h1{
+  color: green;
+}
+#dashboard .box-carousel h1{
+  color: red;
+}
+
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;
@@ -11359,7 +11399,8 @@ body.sb-sidenav-toggled #sidebar-wrapper {
   }
 
   #page-content-wrapper {
-    min-width: 160px;
+    min-width: 0;
+    width: 100%;
   }
 
   body.sb-sidenav-toggled #sidebar-wrapper {

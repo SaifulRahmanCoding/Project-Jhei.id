@@ -1,9 +1,6 @@
 <?
 // koneksi ke database
 require_once('koneksi.php');
-
-// menegcek dan mendapatkan data session
-require_once('session_check.php');
 ?>
 
 <!DOCTYPE html>
@@ -17,16 +14,9 @@ require_once('session_check.php');
 	require('config/script.php');
 	?>
 </head>
-<body>
-	<!-- header -->
-	<div id="header">
-		<?
-		require('komponen/navbar.php');
-		?>
-	</div>
-
+<body style="background-image: url('img/background.jpg');">
 	<!-- from login admin -->
-	<div id="form">
+	<div id="form" class="mt-5">
 		
 		<div class="container">
 			
@@ -35,7 +25,9 @@ require_once('session_check.php');
 				<div class="col col-11 col-sm-6 col-lg-5 p-5 bg-white"> 
 
 					<div class="label-form mb-1 p-2">
-						<h2 align="center"><i class="fas fa-user-circle"></i><br>Login</h2>
+						<div id="logo" class="text-center mb-2">
+							<img src="img/jhei.id.png" alt="" width="100">
+						</div>
 					</div>
 
 					<form action="action_login.php" method="POST">
@@ -70,8 +62,5 @@ require_once('session_check.php');
 
 	</div>
 
-	<?
-	require('komponen/footer.php');
-	?>
 </body>
 </html>

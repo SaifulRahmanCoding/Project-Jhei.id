@@ -29,6 +29,8 @@ foreach($result as $artikel){
 	$fotoLama = $artikel['foto'];
 	$judulArtikel = $artikel['judul'];
 	$konten = $artikel['konten'];
+	$jenisPostingan = $artikel['jenis_postingan'];
+	$tanggal = $artikel['tanggal'];
 }
 
 // Memvalidasi inputan
@@ -44,7 +46,23 @@ if (isset($_POST['judulArtikel'])) {
 	$judulArtikel = $_POST['judulArtikel'];
 }
 else {
-	echo "Error konten";
+	echo "Error judul artikel";
+	exit();
+} //status error
+
+if (isset($_POST['jenisPostingan'])) {
+	$jenisPostingan = $_POST['jenisPostingan'];
+}
+else {
+	echo "Error jenis postingan";
+	exit();
+} //status error
+
+if (isset($_POST['tgl_posting'])) {
+	$tanggal = $_POST['tgl_posting'];
+}
+else {
+	echo "Error tanggal";
 	exit();
 } //status error
 
@@ -78,7 +96,9 @@ if ($upload = false ) {
 $query="UPDATE artikel SET 
 		foto = '{$filepath}',
 		judul = '{$judulArtikel}', 
-		konten = '{$konten}'
+		konten = '{$konten}',
+		jenis_postingan = '{$jenisPostingan}',
+		tanggal = '{$tanggal}'
 		WHERE id_artikel = '{$idArtikel}'";
 
 // mengeksekusi MySQL Query

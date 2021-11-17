@@ -28,15 +28,15 @@ if ($sessionStatus == false) {
 			<!-- Page content-->
 			<div class="container-fluid">
 				<!-- konten -->
-				<div id="info-postingan-admin" class="mt-4">
+				<div id="carousel-admin" class="mt-4">
 					<div class="container">
 						<div class="judul-promo text-center">
-							<span>LIST POSTINGAN</span>
+							<span>LIST GAMBAR CAROUSEL</span>
 						</div>
 						<div class="row mb-4 mt-2">
 							<div class="col-12">
 
-								<a href="form_artikel.php" class="btn add promo text-success mt-2">Tambah</a>
+								<a href="form_carousel.php" class="btn add promo text-success mt-2">Tambah</a>
 
 							</div>
 						</div>
@@ -50,10 +50,6 @@ if ($sessionStatus == false) {
 										<tr>
 											<th scope="col">#</th>
 											<th scope="col">FOTO</th>
-											<th scope="col" style="min-width: 150px;">JUDUL</th>
-											<th scope="col">JENIS POSTINGAN</th>
-											<th scope="col" style="min-width: 100px;">TANGGAL&nbspPOSTING</th>
-											<th scope="col" style="min-width: 300px;">KONTEN</th>
 											<th scope="col">OPSI&nbspPENGEDITAN</th>
 										</tr>
 									</thead>
@@ -61,46 +57,39 @@ if ($sessionStatus == false) {
 									<tbody>
 										<?
 
-										$query= "SELECT * FROM artikel ORDER BY id_artikel DESC";
+										$query= "SELECT * FROM carousel ORDER BY id_carousel DESC";
 										$result=mysqli_query($db, $query);
 										// foreach
 										$i=1;
-										foreach ($result as $artikel) {
+										foreach ($result as $carousel) {
 
 				 							// cek foto
-											if (!file_exists($artikel['foto'])) {
-												$artikel['foto']='upload/default.png';
+											if (!file_exists($carousel['foto'])) {
+												$carousel['foto']='upload/default.png';
 											}
 
-											if (is_null($artikel['foto'])||empty($artikel['foto'])) {
-												$artikel['foto']='upload/default.png';
+											if (is_null($carousel['foto'])||empty($carousel['foto'])) {
+												$carousel['foto']='upload/default.png';
 											}
 
 											?>
 
 											<tr>
+
 												<th scope="row"><?=$i++?></th>
-												<td class="foto-list"><img src="<?=$artikel['foto']?>" alt="error"></td>
 
-												<td><?if (strlen($artikel['judul'])>40) {
-													echo substr($artikel['judul'],0,40)."...";
+												<td class="foto-list"><img src="<?=$carousel['foto']?>" alt="error"></td>
 
-												}else{echo $artikel['judul'];}?></td>
-												<td><?=$artikel['jenis_postingan']?></td>
-												<?
-												require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
-												?>
-												<td><? echo "$hari $bulan $tahun"; ?></td>
-												<td><? echo substr($artikel['konten'],0,200)."..."; ?></td>
 												<td>
-													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_artikel.php?id_artikel=<?=$artikel['id_artikel']?>"><i class="fas fa-edit"></i>
+													<a class="card-text text-decoration-none text-success fs-6" href="form_edit.php?id_carousel=<?=$carousel['id_carousel']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp
 
-													<a class="card-text text-decoration-none text-danger fs-6" href="delete_artikel.php?id_artikel=<?=$artikel['id_artikel']?>" onclick="return confirm_delete()">
+													<a class="card-text text-decoration-none text-danger fs-6" href="delete.php?id_carousel=<?=$carousel['id_carousel']?>" onclick="return confirm_delete()">
 														<i class="fa fa-trash-alt"></i>
 													</a>
 
 												</td>
+												
 											</tr>
 
 											<?}?>
@@ -110,14 +99,14 @@ if ($sessionStatus == false) {
 
 								</div>
 
-							</div>
 						</div>
-
 					</div>
-				</div>
 
+				</div>
 			</div>
+			
 		</div>
-		<?require('config/scriptAdmin.php');?>
-	</body>
-	</html>
+	</div>
+	<?require('config/scriptAdmin.php');?>
+</body>
+</html>

@@ -1,9 +1,4 @@
 @font-face {
-	font-family: Poppins-Light;
-	src: url('fonts/Poppins-Light.ttf');
-}
-
-@font-face {
 	font-family: Poppins-Regular;
 	src: url('fonts/Poppins-Regular.ttf');
 }
@@ -12,16 +7,8 @@
 	src: url('fonts/Poppins-Bold.ttf');
 }
 @font-face {
-	font-family: ZillaSlab-Italic;
-	src: url('fonts/ZillaSlab-Italic.ttf');
-}
-@font-face {
-	font-family: ZillaSlab-Medium;
-	src: url('fonts/ZillaSlab-Medium.ttf');
-}
-@font-face {
-	font-family: ZillaSlab-Semi-Bold;
-	src: url('fonts/ZillaSlab-SemiBold.ttf');
+	font-family: UI-Bold;
+	src: url('fonts/Segoe-UI-Bold.woff');
 }
 * {
 	font-family: "calibri";
@@ -32,7 +19,7 @@ body{
 
 }
 .card{
-	border: 1px solid #D4D4D4 !important;
+	border: none;
 }
 .container{
 	/*margin-top: 50px !important;*/
@@ -158,14 +145,12 @@ body{
 }
 #form .col{
 	border: 2px solid #F1F1F1;
-	background-color: #F7F7F7 !important;
+	background-color: #FFFFFF !important;
 	border-radius: 0px 50px 0px 50px;
 	transition: 0.5s;
-	box-shadow: 5px 5px 5px 5px #FFFFFF;
+	box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.3) !important;
 }
 #form .col:hover{
-	box-shadow: 0px 20px 30px 0px rgba(0,0,0,0.3) !important;
-	background-color: #FFFFFF !important;
 	transition: 0.5s;
 
 }
@@ -195,8 +180,13 @@ body{
 #form label{
 	font-weight: 600;
 }
-input:focus, .btn:focus, .navbar-toggler:focus, .accordion-button:focus, textarea, .btn-close:focus{
+input:focus, .navbar-toggler:focus, .accordion-button:focus, textarea, .btn-close:focus, select:focus{
 	box-shadow: none !important;
+	border: 1px solid #E1E1E1 !important;
+}
+.btn:focus{
+	box-shadow: none !important;
+
 }
 /*end form*/
 
@@ -239,100 +229,55 @@ input:focus, .btn:focus, .navbar-toggler:focus, .accordion-button:focus, textare
 }
 
 .judul-promo, .judul-produk{
-	font-size: 22px;
-	font-family: 'Poppins-Regular', sans-serif;
-	font-weight: 700;
-	color: coral !important;
+	font-size: 30px;
+	font-family: 'Poppins-Bold';
 }
-.foto-promo{
-	position: relative;
+.judul-promo a{
+	font-size: 30px;
+	font-family: 'Poppins-Bold';
+	color: coral;
 }
-.foto-promo img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-.foto-promo .diskon{
-	position: absolute;
-	top: 0;
-	left: 10px;
-	font-size: 14px;
-	font-family: verdana;
-	color: white;
-}
-.segitiga{
-	width: 0; 
-	height: 0; 
-	border: 50px solid;
-	border-color: #FF0048 transparent transparent #FF0048;
-	position: absolute;
-	top: 0;
-}
-#promo .add.promo{
-	box-shadow: 0px 0px 0px 2px green !important;
-	font-weight: 700;
-	border-radius: 20px;
-}
-#promo .add.promo:hover{
-	background-color: green; 
-	color: white !important;
-}
-#promo .card-body .beli{
-	font-size: 16px;
-}
-
-#promo table img{
-	width: 100px;
-}
-#promo table tr,#promo table td{
-	vertical-align: middle;
-	justify-content: center;
-}
-#promo table thead{
-
-}
-/*end*/
 
 /*footer*/
-#footer{
-	/*background-color: #424242;*/
-	/*background-color: #F7F7F7;*/
+#footer h5{
+	font-family: 'UI-Bold';
+}
+#footer .bungkus{
+	background-color: coral;
+}
+#footer .bungkus-2{
+	background-color: #1E1E1E;
+
+}
+#footer ul{
+	padding-left: 0;
+
 }
 #footer ul li{
 	list-style: none;
-}
-#footer .col{
-	font-family: "times new roman";
-
-}
-#footer img{
-	width: 100%;
-	max-height: 180px;
-	max-width: 180px;
-	min-width: 150px;
-	min-height: 150px;
-}
-#footer .row.footer-1{
-	box-shadow: 0px 1px 0px 0px #C5C4C4;
-}
-#footer .row.footer-1 .col h6{
-	font-size: 16px;
-	font-weight: 700;
-}
-#footer .row.footer-1 .col ul{
-	padding: 0;
-}
-#footer .row.footer-1 .col li{
-	font-size: 14px;
-}
-#footer .row.footer-2 p{
-	font-size: 16px;
-	margin: 0;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 .contact-us li a{
 	color: #FFFFFF !important;
 	text-decoration: none;
 	color: #000;
+	/*font-size: 18px;*/
+}
+.contact-us li a:hover{
+	color: #C1C1C1 !important;
+}
+#footer .btn{
+	transition: 0.5s;
+}
+#footer .btn:hover{
+	transform: scale(1.1);
+	transition: 0.5s;
+	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+#footer p{
+	margin-bottom: 0;
 }
 /*end footer*/
 
@@ -413,16 +358,14 @@ iframe{
 	width: 100%;
 	height: 100%;
 }
-#artikel #carouselslide img{
-	max-height: 350px;
-}
+
 #artikel .lain-nya a{
 	color: white;
 	background-color: coral;
 	transition: 0.5s;
 }
 #artikel .judul-artikel p{
-	font-family: ZillaSlab-Semi-Bold;
+	font-family: UI-Bold;
 	font-size: 18px !important;
 }
 
@@ -433,6 +376,11 @@ iframe{
 	transform: scale(1.05);
 	transition: 0.5s;
 	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
+}
+#artikel .card img{
+	max-height: 280px;
+	object-fit: cover;
+
 }
 #artikel .card{
 	transition: 0.5s;
@@ -462,8 +410,8 @@ iframe{
 #info-produk .caption{
 	text-align: justify;
 }
-#info-produk h3, #info-produk h1, .modal-body .col-12.judul-artikel h1, .judul-sidebar-artikel p, .judul-artikel-detail{
-	font-family: ZillaSlab-Semi-Bold;
+#info-produk h4, #info-produk h3, .modal-body .col-12.judul-artikel h1, .judul-sidebar-artikel p, .judul-artikel-detail{
+	font-family: UI-Bold;
 }
 
 #info-produk .btn{
@@ -483,7 +431,7 @@ iframe{
 }
 #info-produk .btn .overlay-produk a{
 	font-size: 20px;
-	font-family: ZillaSlab-Semi-Bold;
+	font-family: UI-Bold;
 }
 #info-produk .btn .overlay-produk:hover{
 	opacity: 1;
@@ -559,6 +507,9 @@ figure img{
 	#form img{
 		width: 50%;
 	}
+	#artikel .card img{
+		max-height: 250px;
+	}
 }
 
 @media screen and (max-width: 769px){
@@ -594,32 +545,31 @@ figure img{
 	#form img{
 		width: 50%;
 	}
-	#carouselslide img{
-		max-height: 350px;
-	}
+	
 	#detail-artikel .judul-sidebar-artikel{
 		font-size: 12px !important;
 	}
 	.active{
 		box-shadow: none !important;
 	}
+	#carouselslide img{
+		max-height: 350px;
+	}
+	#artikel .card img{
+		max-height: 180px;
+	}
+	
 
 @media screen and (max-width: 578px){
-	#footer .row.footer-1 .col h6{
-		font-size: 14px;
-	}
-	#footer .row.footer-1 .col li{
-		font-size: 11px;
-	}
-	#footer img{
-		min-height: 90px;
-		min-width: 90px;
+	#footer h5{
+		font-size: 18px !important;
 	}
 	iframe{
 		min-height: 700px;
 	}
-	#footer .row.footer-2 p{
-		font-size: 8px;
+	#footer p{
+		font-size: 18px;
+		margin-bottom: 0;
 	}
 	#kontak{
 		/*left: 0;*/
@@ -686,6 +636,18 @@ figure img{
 		max-height: 200px;
 	}
 	.foto-artikel{
-		padding-left: 0;
+		/*padding-left: 0;*/
+	}
+	.judul-promo, .judul-produk{
+		font-size: 20px;
+	}
+	.judul-promo a{
+		font-size: 20px;
+	}
+	#about .col-kanan{
+		position: static !important;
+	}
+	#artikel .card img{
+		max-height: 230px;
 	}
 }

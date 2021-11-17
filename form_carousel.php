@@ -1,40 +1,18 @@
 <?
-// menmapilkan file koneksi
-require_once('koneksi.php');
-
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
 
 if ($sessionStatus == false) {
 	header("Location: index.php");
 }
-
-// status tidak error
-$error = 0;
-
-//mendapatkan data ID
-if (isset($_GET['id_carousel'])) {
-	$id_carousel = $_GET['id_carousel'];
-}
-else {
-	echo "ID carousel tidak ditemukan! <a href='admin-carousel.php'>Kembali</a>";
-	exit();
-}
-
-$query = "SELECT * FROM carousel WHERE id_carousel = '$id_carousel'";
-$result = mysqli_query($db,$query);
-
-foreach($result as $carousel){
-	$foto = $carousel['foto'];
-}
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Form Edit</title>
+	<title>Form Input Carousel</title>
 	<?
 	require('config/styleAdmin.php');
 	?>
@@ -50,7 +28,6 @@ foreach($result as $carousel){
 
 			<!-- Page content-->
 			<div class="container-fluid">
-
 				<!-- konten -->
 				<!-- form input -->
 				<div id="form" class="pt-5">
@@ -59,21 +36,13 @@ foreach($result as $carousel){
 
 						<div class="row d-flex justify-content-center">
 
-							<div class="col-12 p-3 p-sm-5 bg-white">
-
-								<h3 align="center" class="mb-2">Edit Foto Carousel</h3>
-
-								<form action="action_edit.php" method="POST" enctype="multipart/form-data">
-
-									<input type="hidden" name="idcarousel" value='<? echo $id_carousel;?>'>
-
-									<div class="form-group mb-3 text-center">
-										<img src="<?=$foto?>" class="preview">
-									</div>
+							<div class="col-12 p-5 bg-white">
+								<h3 align="center" class="mb-5">Tambah Gambar Carousel</h3>
+								<form action="action.php" method="POST" enctype="multipart/form-data">
 
 									<div class="form-group mb-2">
 
-										<label for="foto" class="mb-2">Upload Foto carousel Baru</label>
+										<label for="foto" class="mb-2">Foto Carosuel</label>
 
 										<input name="foto" id="foto" class="form-control" type="file">
 
@@ -82,7 +51,7 @@ foreach($result as $carousel){
 									</div>
 
 									<div class="col-12 d-flex justify-content-center">
-										<input type="submit" name="submit" value="Edit" class="btn text-white col-6 mt-3 mb-3">
+										<input type="submit" name="submit" value="Input" class="btn text-white col-6 mt-3 mb-3">
 										&nbsp
 										<a href="admin-carousel.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
 									</div>
@@ -97,6 +66,7 @@ foreach($result as $carousel){
 
 				</div>
 				<!-- end form input -->
+
 			</div>
 		</div>
 	</div>

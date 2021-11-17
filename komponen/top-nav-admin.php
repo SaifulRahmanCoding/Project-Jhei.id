@@ -1,9 +1,9 @@
 <!-- Top navigation-->
-<nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-lg shadow-sm navbar-light border-bottom sticky-top">
 
 	<div class="container-fluid">
 		
-		<button class="navbar-toggler text-white" id="sidebarToggle" type="button">
+		<button class="navbar-toggler text-white" id="sidebarToggle" type="button" style="border:none !important; outline: none im !important;">
 
 			<span class="navbar-toggler-icon"></span>
 

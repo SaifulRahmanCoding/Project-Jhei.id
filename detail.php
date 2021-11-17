@@ -46,7 +46,7 @@ foreach($result as $artikel){
 	$result = mysqli_query($db,$query);
 	?>
 
-	<div id="detail-artikel">
+	<div id="detail-artikel" class="mt-5">
 
 		<div class="container">
 			<div class="back">
@@ -91,7 +91,10 @@ foreach($result as $artikel){
 									</div>
 									<div class="col-5 col-lg-3"><img src="<?=$artikel['foto'];?>" alt="" style="width: 100%;"></div>
 									<div class="col-12">
-										<p class="text-decoration-none text-success fw-bolder p-0 m-0">PRODUK</p>
+										<?
+										require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
+										?>
+										<p class="text-decoration-none text-success p-0 m-0"><?=$artikel['jenis_postingan']?><span class="text-decoration-none text-dark"> / <? echo "$hari $bulan $tahun"; ?></span></p>
 									</div>
 								</div>
 							</a>

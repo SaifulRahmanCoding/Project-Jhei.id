@@ -49,12 +49,12 @@ require_once('session_check.php');
 	<div class="gradient text-center">Untuk Bertanya Tentang Produk Bisa Chat Langsung Via Direct Link WhatsApp Dengan Meng-klik Hubungi Penjual Atau Klik Icon WhatsApp Di Kanan Bawah</div>
 
 
-	<div id="info-produk" class="pb-2" style="background-color: #FFFAF8;">
+	<div id="info-produk" class="pb-2 pt-5" style="background-color: #FFFAF8;">
 		<div class="container">
-			<p class="judul-promo text-center pt-5" style="color: coral;">VARIAN PRODUK JHEINA</p>
+			<p class="judul-promo text-center pt-5">VARIAN PRODUK <a class="text-decoration-none">JHEINA</a></p>
 			<p class="text-center">Ekstrak Jahe Serbuk Siap Seduh Siap Menjadi Teman Hangat Anda</p>
 			<p class="text-center text-info-produk text-secondary" style="font-size: 14px;">Untuk Melihat Detail Produk, Bisa klik Gambar Produk</p>
-			<div class="row d-flex justify-content-center mt-2 mt-sm-5">
+			<div class="row d-flex justify-content-center mt-2 mt-sm-5 mb-5">
 				<?
 							// pemanggilan data dari tabel promo
 				$query= "SELECT * FROM produk ORDER BY id_produk";
@@ -81,7 +81,7 @@ require_once('session_check.php');
 								</div>
 								<img src="<?=$produk['foto']?>" alt="" class="foto-produk-awal"><br>
 							</button>
-							<h3 class="mt-4"><?=$produk['nama']?></h3>
+							<h4 class="mt-4"><?=$produk['nama']?></h4>
 							<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
 								<a class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
 							</p>
@@ -98,7 +98,7 @@ require_once('session_check.php');
 												<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 											</div>
 											<div class="row pe-1 ps-1 pe-sm-5 ps-sm-5">
-												<div class="col-12 text-center mt-3 mb-3"><h1><?=$produk['nama']?></h1></div>
+												<div class="col-12 text-center mt-3 mb-3"><h3><?=$produk['nama']?></h3></div>
 												<div class="col-12 m-auto">
 													<img src='<?=$produk['foto']?>' class='card-img-top'>
 												</div>
@@ -159,18 +159,19 @@ require_once('session_check.php');
 		<!-- end carousel produk -->
 
 		<!-- isi home artikel-->
-		<div id="artikel" class=" pb-4 mt-2 pt-5">
+		<div id="artikel" class=" pb-4 mt-5 pt-5">
 
 			<div class="container">
-				<p class="judul-produk text-center">TERBARU DARI KAMI</p>
-				<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk Kami, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
+				<p class="judul-produk text-center">POSTINGAN</p>
+				<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
 				<!-- batas row -->
-				<div class="row">
+				<div class="row mt-5">
 					<!-- colom kiri -->
 					<div class="col-12">
 						<div class="row">
 							<?
-							$filter = "LIMIT 0,6";
+							$filter = " ";
+							$limit = "LIMIT 0,6";
 							require('komponen/terbaru.php');
 							?>
 						</div>

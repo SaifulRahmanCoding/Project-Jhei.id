@@ -50,7 +50,6 @@ require_once('session_check.php');
 			</div>
 		</div>
 	<?
-	require('komponen/carousel.php');
 	require('komponen/footer.php');
 	?>
 </body>

@@ -5,43 +5,12 @@ require_once('session_check.php');
 if ($sessionStatus == false) {
 	header("Location: index.php");
 }
-// Memvalidasi inputan
-if (isset($_POST['namaPromo'])) {
-	$namaPromo = $_POST['namaPromo'];
-}
-else {
-	echo "Error nama promo";
-	exit();
-} //status error
 
-if (isset($_POST['hargaNormal'])) {
-	$hargaNormal = $_POST['hargaNormal'];
-}
-else {
-	echo "Error harga normal";
-	exit();
-} //status error
-
-if (isset($_POST['hargaPromo'])) {
-	$hargaPromo = $_POST['hargaPromo'];
-}
-else {
-	echo "Error harga promo";
-	exit();
-} //status error
-
-if (isset($_POST['keterangan'])) {
-	$keterangan = $_POST['keterangan'];
-}
-else {
-	echo "Error keterangan";
-	exit();
-} //status error
 // mnegatasi jika terdapat error pada input
 
 // mengambil data file upload
 $files=$_FILES['foto'];
-$path="upload/";
+$path="upload/carousel/";
 
 // menangani file upload
 // name disini nama dari file nya, bukan dari input name
@@ -61,17 +30,17 @@ if ($upload = false ) {
 }
 
 // Menyiapkan Query MySQL untuk dieksekusi
-$query = "INSERT INTO promo (foto,nama_promo,harga_normal,harga_promo,keterangan) VALUES ('{$filepath}','{$namaPromo}','{$hargaNormal}','{$hargaPromo}','{$keterangan}')";
+$query = "INSERT INTO carousel (foto) VALUES ('{$filepath}')";
 
 // mengeksekusi MySQL Query
 $insert = mysqli_query($db, $query);
 
 // menangani ketika error pada saat eksekusi query
 if ($insert == false) {
-	echo "Error dalam menambah data ke database. <a href='form_promo.php'>Kembali</a>";
+	echo "Error dalam menambah data ke database. <a href='form_carousel.php'>Kembali</a>";
 }
 else{
-	header("Location: promo.php");
+	header("Location: admin-carousel.php");
 }
 
 ?>

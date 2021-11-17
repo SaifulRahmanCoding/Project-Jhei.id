@@ -11,7 +11,7 @@ if ($sessionStatus == false) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Form Input Postingan</title>
 	<?
 	require('config/styleAdmin.php');
 	?>
@@ -42,19 +42,35 @@ if ($sessionStatus == false) {
 
 									<div class="form-group mb-2">
 
-										<label for="fotoArtikel" class="mb-2">Foto Sempel Produk</label>
+										<label for="fotoArtikel" class="mb-2">Foto Postingan</label>
 
 										<input name="fotoArtikel" id="fotoArtikel" class="form-control" type="file">
-										<p class="text-danger">*usahakan rasio 1 : 1 atau square</p>
 
 									</div>
 
 									<div class="form-group mb-3">
 
-										<label for="judulArtikel" class="mb-2">Judul Artikel</label>
+										<label for="judulArtikel" class="mb-2">Judul Postingan</label>
 
 										<input name="judulArtikel" id="judulArtikel"  class="form-control" type="text" placeholder="Judul" required>
 
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="jenisPostingan" class="mb-2">Jenis Postingan</label>
+
+										<select id="jenisPostingan" class="form-control" name="jenisPostingan" required>
+											<option value="">- Pilih Jenis</option>
+											<option value="PRODUK">PRODUK</option>
+											<option value="ARTIKEL">ARTIKEL</option>
+
+										</select>
+									</div>
+
+									<div class="form-group mb-3">
+										<label for="tgl_posting" class="mb-2">Tanggal Posting</label>
+										<input name="tgl_posting" id="tgl_posting"  class="form-control" type="date" required>
 									</div>
 
 									<div class="form-group mb-3">

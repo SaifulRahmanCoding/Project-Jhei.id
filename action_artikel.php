@@ -14,6 +14,22 @@ else {
 	exit();
 } //status error
 
+if (isset($_POST['jenisPostingan'])) {
+	$jenisPostingan = $_POST['jenisPostingan'];
+}
+else {
+	echo "Error dari jenisPostingan";
+	exit();
+} //status error
+
+if (isset($_POST['tgl_posting'])) {
+	$tanggal = $_POST['tgl_posting'];
+}
+else {
+	echo "Error dari tanggal";
+	exit();
+} //status error
+
 if (isset($_POST['konten'])) {
 	$konten = $_POST['konten'];
 }
@@ -44,14 +60,14 @@ if ($upload = false ) {
 }
 
 // Menyiapkan Query MySQL untuk dieksekusi
-$query = "INSERT INTO artikel (foto,judul,konten) VALUES ('{$filepath}','{$judulArtikel}','{$konten}')";
+$query = "INSERT INTO artikel (foto,judul,jenis_postingan,konten,tanggal) VALUES ('{$filepath}','{$judulArtikel}','{$jenisPostingan}','{$konten}','{$tanggal}')";
 
 // mengeksekusi MySQL Query
 $insert = mysqli_query($db, $query);
 
 // menangani ketika error pada saat eksekusi query
 if ($insert == false) {
-	echo "Error dalam menambah data ke database. <a href='form_artikel.php.php'>Kembali</a>";
+	echo "Error dalam menambah data ke database. <a href='form_artikel.php'>Kembali</a>";
 }
 else{
 	header("Location: admin-postingan.php");
