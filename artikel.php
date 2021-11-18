@@ -27,13 +27,13 @@ require_once('session_check.php');
 	<!-- end header -->
 
 	<div id="artikel">
-		<div class="container">
+		<div class="container mb-5">
 			<p class="judul-produk text-center mt-3 mt-sm-5">POSTINGAN</p>
 			<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
 			<div class="row mt-2">
 				<h2 class="mt-5"></h2>
 				<div class="col-12 mt-2 align-items-center">
-					<form action="artikel.php" method="GET" class="d-flex" style="width:100% ;">
+					<form action="artikel.php" method="POST" class="d-flex" style="width:100% ;">
 						<div class="form-group">
 
 							<select id="filter" class="form-control" name="filter" style="min-width: 250px;">
@@ -57,11 +57,11 @@ require_once('session_check.php');
 				<div class="row mt-3 mt-sm-5 mb-4">
 					<?
 					// filter biar dak muncul error saat load halaman pertama kali
-					if (empty($_GET['filter'])) {
+					if (empty($_POST['filter'])) {
 						$form_filter = "";
 					}
 					else{
-						$form_filter = $_GET['filter'];
+						$form_filter = $_POST['filter'];
 
 					}
 
