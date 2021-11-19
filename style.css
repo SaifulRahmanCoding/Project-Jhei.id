@@ -180,11 +180,11 @@ body{
 #form label{
 	font-weight: 600;
 }
-input:focus, .navbar-toggler:focus, .accordion-button:focus, textarea, .btn-close:focus, select:focus{
+input:focus, textarea, select:focus{
 	box-shadow: none !important;
 	border: 1px solid #E1E1E1 !important;
 }
-.btn:focus{
+.btn:focus,.navbar-toggler:focus,.accordion-button:focus,.btn-close:focus{
 	box-shadow: none !important;
 
 }
@@ -223,10 +223,6 @@ input:focus, .navbar-toggler:focus, .accordion-button:focus, textarea, .btn-clos
 /*end kontak*/
 
 /*promo*/
-#promo{
-	font-size: 14px;
-}
-
 .judul-promo, .judul-produk{
 	font-size: 30px;
 	font-family: 'Poppins-Bold';
@@ -377,7 +373,7 @@ iframe{
 	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
 }
 #artikel .card img{
-	max-height: 280px;
+	max-height: 200px;
 	object-fit: cover;
 
 }
@@ -467,8 +463,8 @@ nav .active{
 }
 #carouselslide img{
 	width: 100%;
-	max-height: 600px;
-	/*object-fit: cover;*/
+	height: 300px;
+	
 }
 #detail-artikel #sidebar-artikel{
 	/*height: 100px !important;*/
@@ -507,7 +503,16 @@ figure img{
 		width: 50%;
 	}
 	#artikel .card img{
-		max-height: 250px;
+		max-height: 200px;
+	}
+	.judul-promo, .judul-produk{
+		font-size: 25px;
+	}
+	.judul-promo a{
+		font-size: 25px;
+	}
+	#carouselslide img{
+		max-height: 300px;
 	}
 }
 
@@ -552,10 +557,16 @@ figure img{
 		box-shadow: none !important;
 	}
 	#carouselslide img{
-		max-height: 350px;
+		max-height: 250px;
 	}
 	#artikel .card img{
-		max-height: 180px;
+		max-height: 160px;
+	}
+	.judul-promo, .judul-produk{
+		font-size: 23px;
+	}
+	.judul-promo a{
+		font-size: 23px;
 	}
 	
 
@@ -577,7 +588,7 @@ figure img{
 		font-size: 30px;
 	}
 	.landing-page .subjudul{
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.landing-page .judul a{
 		font-size: 30px;
@@ -588,17 +599,6 @@ figure img{
 		font-size: 22px;
 		border: 1px solid coral;
 		font-weight: 500;
-	}
-	.segitiga{
-		border: 45px solid;
-		width: 0; 
-		height: 0; 
-		border-color: #FF0048 transparent transparent #FF0048;
-		position: absolute;
-		top: 0;
-	}
-	.foto-promo .diskon{
-		font-size: 13px;
 	}
 	.card-body .card-title{
 		font-size: 20px;
@@ -632,7 +632,7 @@ figure img{
 		font-size: 19px !important;
 	}
 	#carouselslide img, #artikel #carouselslide img{
-		max-height: 200px;
+		max-height: 180px;
 	}
 	.foto-artikel{
 		/*padding-left: 0;*/
@@ -647,6 +647,6 @@ figure img{
 		position: static !important;
 	}
 	#artikel .card img{
-		max-height: 230px;
+		max-height: 210px;
 	}
 }

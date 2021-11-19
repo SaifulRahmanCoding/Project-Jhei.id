@@ -11,8 +11,8 @@
 				</div>
 
 				<div class="row pe-1 ps-1 pe-sm-5 ps-sm-5">
-					<h3 align="center" class="mb-5">Tentukan Pesanan Anda</h3>
-					<form action="pesan.php" method="POST">
+					<h3 align="center" class="mb-5">Form Chat</h3>
+					<form action="tanya.php" method="POST">
 
 						<div class="form-group mb-3">
 
@@ -23,17 +23,12 @@
 						</div>
 
 						<div class="form-group mb-3">
-							<label for="alamat" class="mb-2">Alamat</label>
-							<textarea name="alamat" class="form-control" id="alamat" rows="3" placeholder="Isikan Alamat Tujuan Pengiriman Produk"></textarea>
-						</div>
-
-						<div class="form-group mb-3">
-							<label for="pesanan" class="mb-2">Pesanan</label>
-							<textarea name="pesanan" class="form-control" id="pesanan" rows="8" placeholder="Tulis Pesanan Anda di Sini"></textarea>
+							<label for="pertanyaan" class="mb-2">Pertanyaan Anda</label>
+							<textarea name="pertanyaan" class="form-control" id="pertanyaan" rows="8" placeholder="Tulis pertanyaan Anda di Sini"></textarea>
 						</div>
 
 						<div class="col-12 d-flex justify-content-center">
-							<input type="submit" name="submit" value="PESAN" class="btn text-white bg-success col-12 mt-3 mb-3">
+							<input type="submit" name="submit" value="CHAT PENJUAL" class="btn text-white bg-success col-12 mt-3 mb-3">
 							&nbsp
 						</div>
 

@@ -83,7 +83,7 @@ require_once('session_check.php');
 							</button>
 							<h4 class="mt-4"><?=$produk['nama']?></h4>
 							<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
-								<a class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
+								<a href="https://wa.me/6282264120926?text=Hai%20Kak%2C%20Saya%20pesan%20produk%20<?=$produk['nama']?>%20sebanyak%20..." class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
 							</p>
 
 							<!-- The Modal -->
@@ -153,9 +153,11 @@ require_once('session_check.php');
 		<!-- end info produk -->
 
 		<!-- carousel produk -->
-		<?
-		require('komponen/carousel.php'); 
-		?>
+		<div class="layout-carousel">
+			<div class="container">
+
+			</div>
+		</div>
 		<!-- end carousel produk -->
 
 		<!-- isi home artikel-->
@@ -164,14 +166,15 @@ require_once('session_check.php');
 			<div class="container">
 				<p class="judul-produk text-center">POSTINGAN</p>
 				<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
+
 				<!-- batas row -->
-				<div class="row mt-5">
+				<div class="row">
 					<!-- colom kiri -->
 					<div class="col-12">
 						<div class="row">
 							<?
 							$filter = " ";
-							$limit = "LIMIT 0,6";
+							$limit = "LIMIT 0,4";
 							require('komponen/terbaru.php');
 							?>
 						</div>

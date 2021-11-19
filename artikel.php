@@ -49,39 +49,35 @@ require_once('session_check.php');
 					</form>
 				</div>
 			</div>
-		</div>
-
-		<div class="container">
-			<!-- <p class="judul-produk text-center mt-3 mt-sm-5">TERBARU DARI KAMI</p>
-				<p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, veniam?</p> -->
-				<div class="row mt-3 mt-sm-5 mb-4">
-					<?
+			<div class="row mt-5">
+				<?
 					// filter biar dak muncul error saat load halaman pertama kali
-					if (empty($_POST['filter'])) {
-						$form_filter = "";
-					}
-					else{
-						$form_filter = $_POST['filter'];
+				if (empty($_POST['filter'])) {
+					$form_filter = "";
+				}
+				else{
+					$form_filter = $_POST['filter'];
 
-					}
+				}
 
 					// filter jika filter tampilan postongan kosong
-					if (empty($form_filter)) {
-						$kueri = " ";
-					}
-					else{
-						$kueri = "WHERE jenis_postingan='$form_filter'";	
-					}
-					
-					$filter = $kueri;
-					$limit = "";
-					require('komponen/terbaru.php');
-					?>
-				</div>
+				if (empty($form_filter)) {
+					$kueri = " ";
+				}
+				else{
+					$kueri = "WHERE jenis_postingan='$form_filter'";	
+				}
+
+				$filter = $kueri;
+				$limit = "";
+				require('komponen/terbaru.php');
+				?>
 			</div>
 		</div>
-		<?
-		require('komponen/footer.php');
-		?>
-	</body>
-	</html>
+
+	</div>
+	<?
+	require('komponen/footer.php');
+	?>
+</body>
+</html>
