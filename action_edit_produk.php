@@ -29,6 +29,9 @@ foreach($result as $produk){
 	$fotoLama = $produk['foto'];
 	$namaProduk = $produk['nama'];
 	$caption = $produk['caption'];
+	$harga = $produk['harga'];
+	$berat = $produk['berat'];
+	$stok = $produk['stok'];
 }
 
 // Memvalidasi inputan
@@ -45,6 +48,30 @@ if (isset($_POST['namaProduk'])) {
 }
 else {
 	echo "Error caption";
+	exit();
+} //status error
+
+if (isset($_POST['harga'])) {
+	$harga = $_POST['harga'];
+}
+else {
+	echo "Error dari harga";
+	exit();
+} //status error
+
+if (isset($_POST['berat'])) {
+	$berat = $_POST['berat'];
+}
+else {
+	echo "Error dari berat";
+	exit();
+} //status error
+
+if (isset($_POST['stok'])) {
+	$stok = $_POST['stok'];
+}
+else {
+	echo "Error dari stok";
 	exit();
 } //status error
 
@@ -78,7 +105,10 @@ if ($upload = false ) {
 $query="UPDATE produk SET 
 		foto = '{$filepath}',
 		nama = '{$namaProduk}', 
-		caption = '{$caption}'
+		caption = '{$caption}',
+		harga = '{$harga}',
+		berat = '{$berat}',
+		stok = '{$stok}'
 		WHERE id_produk = '{$idProduk}'";
 
 // mengeksekusi MySQL Query

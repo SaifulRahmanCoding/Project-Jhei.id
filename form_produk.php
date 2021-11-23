@@ -56,7 +56,35 @@ if ($sessionStatus == false) {
 								</div>
 
 								<div class="form-group mb-3">
-									<label for="caption" class="mb-2">Caption</label>
+
+									<label for="harga" class="mb-2">Harga ( Rp )</label>
+
+									<input name="harga" id="harga"  class="form-control" type="number" required>
+
+								</div>
+
+								<div class="form-group mb-3">
+
+									<label for="berat" class="mb-2">Berat ( gram ) </label>
+
+									<input name="berat" id="berat"  class="form-control" type="number" required>
+
+								</div>
+
+								<div class="form-group mb-3">
+
+									<label for="stok" class="mb-2">Stok</label>
+
+									<select id="stok" class="form-control" name="stok" required>
+										<option value="READY STOK">READY STOK</option>
+										<option value="PRE ORDER">PRE ORDER</option>
+										<option value="KOSONG">KOSONG</option>
+
+									</select>
+								</div>
+
+								<div class="form-group mb-3">
+									<label for="caption" class="mb-2">Deskripsi Produk</label>
 									<textarea name="caption" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi caption produk jika ada!"></textarea>
 								</div>
 

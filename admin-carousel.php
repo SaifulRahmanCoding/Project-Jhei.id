@@ -36,7 +36,7 @@ if ($sessionStatus == false) {
 						<div class="row mb-4 mt-2">
 							<div class="col-12">
 
-								<a href="form_carousel.php" class="btn add promo text-success mt-2">Tambah</a>
+								<a href="form_carousel.php" class="btn add promo mt-2">Tambah</a>
 
 							</div>
 						</div>

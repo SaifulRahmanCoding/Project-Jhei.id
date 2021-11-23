@@ -36,7 +36,7 @@ if ($sessionStatus == false) {
 						<div class="row mb-4 mt-2">
 							<div class="col-12">
 
-								<a href="form_produk.php" class="btn add promo text-success mt-2">Tambah</a>
+								<a href="form_produk.php" class="btn add promo mt-2">Tambah</a>
 
 							</div>
 						</div>
@@ -50,8 +50,11 @@ if ($sessionStatus == false) {
 										<tr>
 											<th scope="col">#</th>
 											<th scope="col">FOTO</th>
-											<th scope="col">NAMA</th>
-											<th scope="col">CAPTION</th>
+											<th scope="col" style="min-width: 200px;">NAMA</th>
+											<th scope="col" style="min-width: 150px;">HARGA</th>
+											<th scope="col" style="min-width: 150px;">BERAT</th>
+											<th scope="col" style="min-width: 150px;">STOK</th>
+											<th scope="col" style="min-width: 300px;">CAPTION</th>
 											<th scope="col">OPSI&nbspPENGEDITAN</th>
 										</tr>
 									</thead>
@@ -78,15 +81,25 @@ if ($sessionStatus == false) {
 
 											<tr>
 												<th scope="row"><?=$i++?></th>
+
 												<td class="foto-list"><img src="<?=$produk['foto']?>" alt="error"></td>
+
 												<td><?if (strlen($produk['nama'])>35) {
 													echo substr($produk['nama'],0,35)."...";
 
 												}else{echo $produk['nama'];}?></td>
-												<td><?if (strlen($produk['caption'])>35) {
-													echo substr($produk['caption'],0,35)."...";
+												<?
+												$harga_database = $produk['harga'];
+												$format_harga = number_format($harga_database,0,",",".")
+												?>
+												<td>Rp <?=$format_harga?></td>
+												<td><?=$produk['berat']?> gram</td>
+												<td><?=$produk['stok']?></td>
 
+												<td><?if (strlen($produk['caption'])>100) {
+													echo substr($produk['caption'],0,100)."...";
 												}else{echo $produk['caption'];}?></td>
+
 												<td>
 													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_produk.php?id_produk=<?=$produk['id_produk']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp
@@ -95,14 +108,15 @@ if ($sessionStatus == false) {
 														<i class="fa fa-trash-alt"></i>
 													</a>
 												</td>
+
 											</tr>
 
-											<?}?>
+										<?}?>
 
-										</tbody>
-									</table>
+									</tbody>
+								</table>
 
-								</div>
+							</div>
 
 						</div>
 					</div>

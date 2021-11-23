@@ -11,7 +11,7 @@ require_once('session_check.php');
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sampel artikel</title>
+	<title>Postingan</title>
 	<?
 	require('config/style.php');
 	require('config/script.php');
@@ -28,11 +28,12 @@ require_once('session_check.php');
 
 	<div id="artikel">
 		<div class="container mb-5">
-			<p class="judul-produk text-center mt-3 mt-sm-5">POSTINGAN</p>
+			<h1 class="judul-produk text-center mt-3 mt-sm-5">POSTINGAN</h1>
 			<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
 			<div class="row mt-2">
-				<h2 class="mt-5"></h2>
-				<div class="col-12 mt-2 align-items-center">
+
+				<!-- form filter tampilan -->
+				<div class="col-12 col-sm-6 mt-2">
 					<form action="artikel.php" method="POST" class="d-flex" style="width:100% ;">
 						<div class="form-group">
 
@@ -48,8 +49,20 @@ require_once('session_check.php');
 
 					</form>
 				</div>
+
 			</div>
-			<div class="row mt-5">
+			<div class="row mt-4">
+				<? if (empty($_POST['cari'])) { 
+					echo " ";
+				 }
+				 else{ ?>
+				<div class="hasil-pencarian mb-3">
+					<span class="fw-bolder fs-5">
+						Hasil Pencarian : "<?=$_POST['cari']?>"
+					</span>
+				</div>
+				<?}?>
+
 				<?
 					// filter biar dak muncul error saat load halaman pertama kali
 				if (empty($_POST['filter'])) {
@@ -60,7 +73,7 @@ require_once('session_check.php');
 
 				}
 
-					// filter jika filter tampilan postongan kosong
+					// filter jika filter tampilan postingan value kosong
 				if (empty($form_filter)) {
 					$kueri = " ";
 				}
@@ -70,6 +83,27 @@ require_once('session_check.php');
 
 				$filter = $kueri;
 				$limit = "";
+
+
+				// fitur pencarian
+				if (empty($_POST['cari'])) {
+					$form_cari = "";
+				}
+				else{
+					$form_cari = $_POST['cari'];
+				}
+
+				// filter jika fitur pencarian tidak ada input
+				if (empty($form_cari)) {
+					$kueriCari = " ";
+				}
+				else{
+					$kueriCari = "WHERE judul LIKE '%$form_cari%'";	
+				}
+
+				$search = $kueriCari;
+
+				// konten
 				require('komponen/terbaru.php');
 				?>
 			</div>

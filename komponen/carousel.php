@@ -26,8 +26,15 @@
           $aktif = " ";
         }
         ?>
-        <div class="carousel-item <?=$aktif?>">
+        <div class="carousel-item <?=$aktif?>" style="position: relative;">
           <img src="<?=$carousel['foto']?>" class="d-block w-100" alt="...">
+          <div class="overlay-carousel" style="">
+            <div class="bungkus-a d-flex flex-column align-items-center justify-content-center">
+              <a href="https://wa.me/6282264120926?text=Hai%20Kak%2C%20Saya%20tertarik%20dengan%20promo-nya.%20" class="text-decoration-none fw-bolder mb-3 mt-5">BELI</a>
+              <p class="text-white">Silahkan Klik Tombol Berikut Untuk Lanjut Ke Pembelian</p>
+            </div>
+          </div>
+
         </div>
         <?}?>
         <!-- end foreach -->

@@ -23,6 +23,30 @@ else {
 	exit();
 } //status error
 
+if (isset($_POST['harga'])) {
+	$harga = $_POST['harga'];
+}
+else {
+	echo "Error dari harga";
+	exit();
+} //status error
+
+if (isset($_POST['berat'])) {
+	$berat = $_POST['berat'];
+}
+else {
+	echo "Error dari berat";
+	exit();
+} //status error
+
+if (isset($_POST['stok'])) {
+	$stok = $_POST['stok'];
+}
+else {
+	echo "Error dari stok";
+	exit();
+} //status error
+
 // mengambil data file upload
 $files=$_FILES['fotoProduk'];
 $path="upload/produk/";
@@ -45,7 +69,7 @@ if ($upload = false ) {
 }
 
 // Menyiapkan Query MySQL untuk dieksekusi
-$query = "INSERT INTO produk (foto,nama,caption) VALUES ('{$filepath}','{$namaProduk}','{$caption}')";
+$query = "INSERT INTO produk (foto,nama,caption,harga,berat,stok) VALUES ('{$filepath}','{$namaProduk}','{$caption}','{$harga}','{$berat}','{$stok}')";
 
 // mengeksekusi MySQL Query
 $insert = mysqli_query($db, $query);

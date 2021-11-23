@@ -28,6 +28,10 @@ foreach($result as $produk){
 	$foto = $produk['foto'];
 	$namaProduk = $produk['nama'];
 	$caption = $produk['caption'];
+	$harga = $produk['harga'];
+	$berat = $produk['berat'];
+	$stok = $produk['stok'];
+
 }
 
 ?>
@@ -88,6 +92,64 @@ foreach($result as $produk){
 
 										<input name="namaProduk" id="namaProduk"  class="form-control" type="text" value="<?=$namaProduk?>" placeholder="Nama Produk" required>
 
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="harga" class="mb-2">Harga ( Rp )</label>
+
+										<input name="harga" id="harga"  class="form-control" type="number" value="<?=$harga?>" required>
+
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="berat" class="mb-2">Berat ( gram ) </label>
+
+										<input name="berat" id="berat"  class="form-control" type="number" value="<?=$berat?>" required>
+
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="stok" class="mb-2">Stok</label>
+
+										<select id="stok" class="form-control" name="stok" required>
+
+											<? if ($stok == "") {?>
+
+												<option value="READY STOK">READY STOK</option>
+												<option value="PRE ORDER">PRE ORDER</option>
+												<option value="KOSONG">KOSONG</option>
+
+											<? } ?>
+
+											<? if ($stok == "READY STOK") {?>
+
+												<option value="READY STOK">READY STOK</option>
+												<option value="PRE ORDER">PRE ORDER</option>
+												<option value="KOSONG">KOSONG</option>
+
+											<? } ?>
+
+											<? if ($stok == "PRE ORDER") {?>
+
+												<option value="PRE ORDER">PRE ORDER</option>
+												<option value="READY STOK">READY STOK</option>
+												<option value="KOSONG">KOSONG</option>
+
+											<? } ?>
+
+											<? if ($stok == "KOSONG") {?>
+
+												<option value="KOSONG">KOSONG</option>
+												<option value="READY STOK">READY STOK</option>
+												<option value="PRE ORDER">PRE ORDER</option>
+
+											<? } ?>
+
+
+										</select>
 									</div>
 
 									<div class="form-group mb-3">

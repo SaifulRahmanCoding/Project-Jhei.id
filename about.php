@@ -11,7 +11,7 @@ require_once('session_check.php');
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lokasi</title>
+	<title>Tentang Kami</title>
 	<?
 	require('config/style.php');
 	require('config/script.php');
@@ -24,31 +24,40 @@ require_once('session_check.php');
 		require('komponen/navbar.php');
 		?>
 	</div>
-	<div id="about" class="mt-3 pt-3 pb-3">
-			<div class="container">
-				<h1 class="text-center mb-3">ABOUT US</h1>
-				<div class="row mb-2">
-					
-					<div class="col-12 col-sm-7 col-lg-7">
-						<img src="src/img/carousel/carousel-produk-2.jpg" alt="" style="width:100%;">
-					</div>
-					<div class="col-kanan col-12 col-sm-5 col-lg-5 p-0 mt-2 mb-2 shadow-sm">
-						<div class="col-12 pt-3 fs-4 fw-bolder">
-							<p class="text-center mb-0">
-								Ndok Donald Borobudur
-							</p>
-						</div>
-						<div class="col-12 p-4 mt-0 mt-sm-2">
-							<p style="text-align: justify;">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quae, sequi odit minus iure maxime consequatur enim quis hic totam non nobis fuga voluptatum? Quis, impedit corrupti quaerat labore, soluta dolorem architecto in, vel doloribus quam et rerum dolore commodi deleniti optio deserunt nobis neque dolorum nulla maxime a itaque.
-							</p>
-						</div>
+	<div id="about" class="mt-4 pt-3 pb-3">
+		<div class="container">
+
+			<h1 class="text-center mb-4 judul-produk">Tentang Kami</h1>
+
+			<p class="mb-3" style="text-align: justify;">
+				Jheina adalah minuman serbuk siap seduh dengan bahan dasar ekstrak jahe. Jheina ini diproduksi sejak awal pandemi masuk Indonesia. Karena kebutuhan minuman jahe yang cukup tinggi di masa pandemi, akhirnya kami memproduksinya. 
+			</p>
+
+			<div class="row mb-2 d-flex flex-column-reverse flex-sm-row">
+
+				<div class="col-kanan col-12 col-sm-6">
+					<div class="col-12 ps-0 pe-0 pe-sm-4">
+
+
+						<p>
+							Target market jheina adalah pria dan wanita dewasa di atas 30 tahun karena kebutuhan mereka untuk minuman hangat, segar dan menyehatkan cukup tinggi. 
+						</p>
+						<p>
+							Jheina punya nilai lebih yakni praktis, tinggal seduh dengan air hangat tanpa perlu penambahan apapun lagi, khususnya gula karena memang sudah mengandung gula dan rempah-rempah seperti kayumanis, cengkeh dan serai. Selain itu, karena ekstrak jahe yang diolah maka produk ini tanpa ampas.
+						</p>
 
 					</div>
 				</div>
-				<!-- end row -->
+
+				<div class="col-kiri col-12 col-sm-6">
+					<img src="img/produk-jahe.jpg" alt="" style="width:100%;">
+				</div>
+				
 			</div>
+			<!-- end row -->
+
 		</div>
+	</div>
 	<?
 	require('komponen/footer.php');
 	?>
