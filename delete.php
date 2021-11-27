@@ -17,6 +17,17 @@ else{ echo "ID tidak ditemukan! <a href='admin-carousel.php'>Kembali</a>";
 	exit();
 }
 
+// fungsi hapus foto ketika data di delete
+$query_foto = "SELECT foto FROM carousel WHERE id_carousel = '$id_carousel'";
+$hasil = mysqli_query($db,$query_foto);
+
+$row = mysqli_fetch_assoc($hasil);
+
+if (file_exists($row['foto'])){
+	unlink($row['foto']); //hapus foto lama
+}
+
+
 // Query Get data produk
 $query = "DELETE FROM carousel WHERE id_carousel = '$id_carousel'";
 

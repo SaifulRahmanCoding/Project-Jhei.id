@@ -37,7 +37,7 @@ if ($sessionStatus == false) {
 						<div class="row d-flex justify-content-center">
 
 							<div class="col-12 p-5 bg-white">
-								<h3 align="center" class="mb-5">Tambah Gambar Carousel</h3>
+								<h2 align="center" class="mb-5">Tambah Promo</h2>
 								<form action="action.php" method="POST" enctype="multipart/form-data">
 
 									<div class="form-group mb-2">
@@ -47,6 +47,14 @@ if ($sessionStatus == false) {
 										<input name="foto" id="foto" class="form-control" type="file">
 
 										<p class="card-text mt-1" style="font-size: 10px; color: red !important;">*di sarankan upload gambar ratio WideScreen [ 16 : 9 ]</p>
+
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="ketCarousel" class="mb-2">Kode Promo/ Voucher</label>
+
+										<input name="ketCarousel" id="ketCarousel"  class="form-control" type="text" placeholder="contoh : B2GET1MERDEKA" required>
 
 									</div>
 

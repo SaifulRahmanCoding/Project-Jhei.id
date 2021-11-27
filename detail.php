@@ -22,14 +22,27 @@ foreach($result as $artikel){
 	$judul = $artikel['judul'];
 	$konten = $artikel['konten'];
 	$jenisPostingan = $artikel['jenis_postingan'];
+	$keywords = $artikel['keywords'];
 }
+
+$select = "SELECT * FROM seo";
+$data = mysqli_query($db, $select);
+$data = mysqli_fetch_assoc($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
+	<meta name="description" content="<?=$data['description']?>">
+	<? if (empty($keywords)) {?>
+	<meta name="keywords" content=" ">
+	<?}else{ ?>
+	<meta name="keywords" content="<?=$keywords?>">
+	<?}?>
+	<meta name="author" content="<?=$data['author']?>">
+	<meta name="robots" content="<?=($data['robot_index'] ? "index" : "noindex")?>,<?=($data['robot_follow'] ? "follow" : "nofollow")?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?=$judul?></title>
 	<?
@@ -52,7 +65,7 @@ foreach($result as $artikel){
 				<?
 				require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
 				?>
-				<a href="index.php" class="text-decoration-none text-dark">Home</a> / <a href="artikel.php" class="text-decoration-none text-dark">Postingan</a> / <?
+				<a href="index.php" class="text-decoration-none text-dark">Home</a> / <a href="artikel.php" class="text-decoration-none text-dark">Artikel</a> / <?
 				if (strlen($judul)>40) {
 					echo substr($judul,0,40)."...";
 
@@ -64,12 +77,30 @@ foreach($result as $artikel){
 				<div class="col-12 col-sm-8">
 
 					<div class="col-12 d-flex flex-column justify-content-center p-3 p-sm-4 p-lg-5">
+						
 						<div class="konten-berita text-center mb-2">
 							<h2 class="judul-artikel-detail mb-3 mb-sm-4"><?=$artikel['judul'];?></h2>
 							<a class="text-decoration-none text-dark"><? echo "$hari $bulan $tahun"; ?></a><br><br>
 							<img src="<?=$foto?>" alt="">
 						</div>
+						
 						<p class="isi-konten-postingan"><?=$konten?></p>
+
+						<p class="tags d-inline mt-3 mt-sm-5">
+							Kata Kunci : 
+							<?
+
+							if (empty($keywords)) {
+								echo "";
+							}
+							else{	
+								$pecah_keywords = explode(",", $keywords);
+								foreach ($pecah_keywords as $tags) {?>
+									<span class="me-1 ps-1 pe-1 bg-light rounded text-secondary shadow-sm"><?=$tags?></span>	
+								<?}
+							}?>
+						</p>
+
 					</div>
 
 				</div>
@@ -115,9 +146,10 @@ foreach($result as $artikel){
 						<?}?>
 					</div>
 
+					<div class="col-12 col-sm-8">
 					<div class="nav768-up d-flex justify-content-center">
 
-						<div class="col-4 text-end p-3 m-2">
+						<div class="col-6 col-sm-5 col-lg-6 text-end ps-0 p-3 m-2">
 							<?
 							$query = "SELECT * FROM artikel WHERE id_artikel<$idArtikel ORDER BY id_artikel DESC LIMIT 1";
 							$result = mysqli_query($db,$query);
@@ -137,16 +169,16 @@ foreach($result as $artikel){
 								$linkNav = "href='detail.php?id_artikel=$idNavigasi'";
 							}
 							?>
-							<a <?=$linkNav?> class="text-decoration-none p-2">Sebelumnya</a>
-							<p class="fw-bolder pt-3"><?
-							if (strlen($artikel['judul'])>60) {
-								echo substr($artikel['judul'],0,60)."...";
+							<p>Artikel Sebelumnya</p>
+							<a <?=$linkNav?> class="text-decoration-none"><?
+							if (strlen($artikel['judul'])>40) {
+								echo substr($artikel['judul'],0,40)."...";
 
 							}else{echo $artikel['judul'];}
-							?></p>
+							?></a>
 						</div>
 
-						<div class="col-4 p-3 m-2">
+						<div class="col-6 col-sm-5 col-lg-6 p-3 m-2 pe-0">
 							<?
 							$query = "SELECT * FROM artikel WHERE id_artikel>$idArtikel ORDER BY id_artikel ASC LIMIT 1";
 							$result = mysqli_query($db,$query);
@@ -166,24 +198,23 @@ foreach($result as $artikel){
 								$linkNav = "href='detail.php?id_artikel=$idNavigasi'";
 							}
 							?>
-							<a <?=$linkNav?> class="text-decoration-none p-2">Selanjutnya</a>
-							<p class="fw-bolder pt-3"><?
-							if (strlen($artikel['judul'])>60) {
-								echo substr($artikel['judul'],0,60)."...";
+							<p>Artikel Selanjutnya</p>
+							<a <?=$linkNav?> class="text-decoration-none"><?
+							if (strlen($artikel['judul'])>40) {
+								echo substr($artikel['judul'],0,40)."...";
 
 							}else{echo $artikel['judul'];}
-							?></p>
+							?></a>
 						</div>
 					</div>
 				</div>
-
-
 			</div>
-			<!-- end container -->
 		</div>
+		<!-- end container -->
+	</div>
 
-		<?
-		require('komponen/footer.php');
-		?>
-	</body>
-	</html>
+	<?
+	require('komponen/footer.php');
+	?>
+</body>
+</html>

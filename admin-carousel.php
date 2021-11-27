@@ -31,7 +31,7 @@ if ($sessionStatus == false) {
 				<div id="carousel-admin" class="mt-4">
 					<div class="container">
 						<div class="judul-promo text-center">
-							<span>LIST GAMBAR CAROUSEL</span>
+							<span>LIST PROMO</span>
 						</div>
 						<div class="row mb-4 mt-2">
 							<div class="col-12">
@@ -50,6 +50,7 @@ if ($sessionStatus == false) {
 										<tr>
 											<th scope="col">#</th>
 											<th scope="col">FOTO</th>
+											<th scope="col">KODE PROMO/ VOUCHER</th>
 											<th scope="col">OPSI&nbspPENGEDITAN</th>
 										</tr>
 									</thead>
@@ -79,6 +80,8 @@ if ($sessionStatus == false) {
 												<th scope="row"><?=$i++?></th>
 
 												<td class="foto-list"><img src="<?=$carousel['foto']?>" alt="error"></td>
+
+												<td><?=$carousel['ket_carousel']?></td>
 
 												<td>
 													<a class="card-text text-decoration-none text-success fs-6" href="form_edit.php?id_carousel=<?=$carousel['id_carousel']?>"><i class="fas fa-edit"></i>

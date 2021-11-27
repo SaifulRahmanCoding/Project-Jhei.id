@@ -37,7 +37,7 @@ if ($sessionStatus == false) {
 						<div class="row d-flex justify-content-center">
 
 							<div class="col-12 p-3 p-sm-5 bg-white">
-								<h3 align="center" class="mb-5">Buat Postingan Baru</h3>
+								<h2 align="center" class="mb-5">Buat Postingan Baru</h2>
 								<form action="action_artikel.php" method="POST" enctype="multipart/form-data">
 
 									<div class="form-group mb-2">
@@ -71,6 +71,11 @@ if ($sessionStatus == false) {
 									<div class="form-group mb-3">
 										<label for="tgl_posting" class="mb-2">Tanggal Posting</label>
 										<input name="tgl_posting" id="tgl_posting"  class="form-control" type="date" required>
+									</div>
+
+									<div class="form-group mb-3">
+										<label for="keywords" class="mb-2">Keywords / Kata Kunci Postingan</label>
+										<textarea name="keywords" id="keywords" class="form-control" placeholder="contoh : jheina,alami,ektrak jahe,siap seduh" required></textarea>
 									</div>
 
 									<div class="form-group mb-3">

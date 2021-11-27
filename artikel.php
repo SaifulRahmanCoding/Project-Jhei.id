@@ -5,13 +5,23 @@ require_once('koneksi.php');
 
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
+
+// manggil data dari tabel seo
+$select = "SELECT * FROM seo";
+$data = mysqli_query($db, $select);
+$data = mysqli_fetch_assoc($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Postingan</title>
+
+
+	<? require_once('komponen/seo.php'); ?>
+
+	<title>Artikel Septutar Produk dan Info</title>
 	<?
 	require('config/style.php');
 	require('config/script.php');
@@ -28,7 +38,7 @@ require_once('session_check.php');
 
 	<div id="artikel">
 		<div class="container mb-5">
-			<h1 class="judul-produk text-center mt-3 mt-sm-5">POSTINGAN</h1>
+			<h1 class="judul-produk text-center mt-3 mt-sm-5">ARTIKEL</h1>
 			<p class="text-center">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
 			<div class="row mt-2">
 
@@ -103,7 +113,7 @@ require_once('session_check.php');
 
 				$search = $kueriCari;
 
-				// konten
+				// konten artikel
 				require('komponen/terbaru.php');
 				?>
 			</div>

@@ -31,7 +31,7 @@ if ($sessionStatus == false) {
 				<div id="info-postingan-admin" class="mt-4">
 					<div class="container">
 						<div class="judul-promo text-center">
-							<span>LIST POSTINGAN</span>
+							<span>LIST ARTIKEL</span>
 						</div>
 						<div class="row mb-4 mt-2">
 							<div class="col-12">
@@ -53,6 +53,7 @@ if ($sessionStatus == false) {
 											<th scope="col" style="min-width: 150px;">JUDUL</th>
 											<th scope="col">JENIS POSTINGAN</th>
 											<th scope="col" style="min-width: 100px;">TANGGAL&nbspPOSTING</th>
+											<th scope="col">KEYWORDS</th>
 											<th scope="col" style="min-width: 300px;">KONTEN</th>
 											<th scope="col">OPSI&nbspPENGEDITAN</th>
 										</tr>
@@ -91,7 +92,8 @@ if ($sessionStatus == false) {
 												require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
 												?>
 												<td><? echo "$hari $bulan $tahun"; ?></td>
-												<td><? echo substr($artikel['konten'],0,200)."..."; ?></td>
+												<td><?=$artikel['keywords']?></td>
+												<td><? echo substr($artikel['konten'],0,100)."..."; ?></td>
 												<td>
 													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_artikel.php?id_artikel=<?=$artikel['id_artikel']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp

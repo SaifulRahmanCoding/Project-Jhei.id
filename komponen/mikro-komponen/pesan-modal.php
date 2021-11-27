@@ -11,7 +11,7 @@
 				</div>
 
 				<div class="row pe-1 ps-1 pe-sm-5 ps-sm-5 mt-3">
-					<h4 class="text-center mb-3" style="font-family: Poppins-Bold;">Chat Via Whatsapp</h4>
+					<h4 class="judul-modal-wa text-center mb-3">Chat Via <span class="text-success">Whatsapp</span></h4>
 					<form action="tanya.php" method="POST">
 
 						<div class="form-group mb-3">

@@ -12,10 +12,13 @@
 
 		<a class="list-group-item p-3" href="admin-produk.php"><i class="fas fa-shopping-bag"></i>&nbsp&nbsp Produk</a>
 
-		<a class="list-group-item p-3" href="admin-postingan.php"><i class="fas fa-newspaper"></i>&nbsp&nbsp Postingan</a>
+		<a class="list-group-item p-3" href="admin-postingan.php"><i class="fas fa-newspaper"></i>&nbsp&nbsp Artikel</a>
 
-		<a class="list-group-item p-3" href="admin-carousel.php"><i class="fas fa-image"></i>&nbsp&nbsp Carousel</a>
+		<a class="list-group-item p-3" href="admin-carousel.php"><i class="fas fa-tags"></i>&nbsp&nbsp Promo</a>
 
+		<a class="list-group-item p-3" href="admin-SEO.php"><i class="fas fa-search"></i>&nbsp&nbsp Update SEO</a>
+
+		<a class="list-group-item p-3" href="admin-info-web.php"><i class="fas fa-info"></i>&nbsp&nbsp Update Info Website</a>
 		<!-- <a class="list-group-item p-3" href="registration.php"><i class="fas fa-user-circle"></i>&nbsp&nbsp Buat Akun</a> -->
 
 		<a class="list-group-item p-3" href="logout.php"><i class="fas fa-sign-out-alt"></i>&nbsp&nbsp Logout</a>

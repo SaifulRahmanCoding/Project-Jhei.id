@@ -25,7 +25,7 @@
 						<a class="nav-link <? if($halaman == 'home'){echo 'active';} ?>" aria-current="page"  href="index.php">BERANDA</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">POSTINGAN</a>
+						<a class="nav-link <? if($halaman == 'artikel'){echo 'active';} ?>" aria-current="page"  href="artikel.php">ARTIKEL</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link <? if($halaman == 'lokasi'){echo 'active';} ?>" aria-current="page"  href="lokasi.php">LOKASI</a>
@@ -50,7 +50,7 @@
 						<div class="fitur-cari">
 							<form action="artikel.php" method="POST" class="d-flex">
 								<div>
-									<input type="search" name="cari" placeholder="Cari Postingan...">
+									<input type="search" name="cari" placeholder="Cari Artikel...">
 								</div>
 
 								<button type="submit" name="submit"><i class="fas fa-search"></i></button>

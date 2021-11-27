@@ -51,9 +51,9 @@ if ($sessionStatus == false) {
 											<th scope="col">#</th>
 											<th scope="col">FOTO</th>
 											<th scope="col" style="min-width: 200px;">NAMA</th>
-											<th scope="col" style="min-width: 150px;">HARGA</th>
-											<th scope="col" style="min-width: 150px;">BERAT</th>
-											<th scope="col" style="min-width: 150px;">STOK</th>
+											<th scope="col" style="min-width: 100px;">HARGA</th>
+											<th scope="col" style="min-width: 100px;">BERAT</th>
+											<th scope="col" style="min-width: 100px;">STOK</th>
 											<th scope="col" style="min-width: 300px;">CAPTION</th>
 											<th scope="col">OPSI&nbspPENGEDITAN</th>
 										</tr>

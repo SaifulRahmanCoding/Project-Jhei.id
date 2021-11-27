@@ -13,10 +13,10 @@
  * (1) https://ckeditor.com/cke4/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) https://ckeditor.com/cke4/builder/70974ffb86ace67e706ae0192c8aea7f
+ * (2) https://ckeditor.com/cke4/builder/a59b533151eb26822765fbdad84895bf
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) https://ckeditor.com/cke4/builder/download/70974ffb86ace67e706ae0192c8aea7f
+ * (3) https://ckeditor.com/cke4/builder/download/a59b533151eb26822765fbdad84895bf
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'office2013',
+	skin: 'moono-lisa',
 	preset: 'standard',
 	ignore: [
 		'.DS_Store',
@@ -54,11 +54,12 @@ var CKBUILDER_CONFIG = {
 		'tests'
 	],
 	plugins : {
+		'SimpleLink' : 1,
 		'a11yhelp' : 1,
 		'about' : 1,
+		'autoembed' : 1,
 		'basicstyles' : 1,
 		'blockquote' : 1,
-		'bootstrapVisibility' : 1,
 		'clipboard' : 1,
 		'contextmenu' : 1,
 		'easyimage' : 1,
@@ -71,16 +72,13 @@ var CKBUILDER_CONFIG = {
 		'horizontalrule' : 1,
 		'htmlwriter' : 1,
 		'image' : 1,
-		'image2' : 1,
-		'imagepaste' : 1,
-		'imageresponsive' : 1,
+		'imageresizerowandcolumn' : 1,
 		'indentlist' : 1,
 		'justify' : 1,
 		'link' : 1,
 		'list' : 1,
 		'magicline' : 1,
 		'maximize' : 1,
-		'oembed' : 1,
 		'pastefromgdocs' : 1,
 		'pastefromlibreoffice' : 1,
 		'pastefromword' : 1,
@@ -102,7 +100,6 @@ var CKBUILDER_CONFIG = {
 		'wysiwygarea' : 1
 	},
 	languages : {
-		'en' : 1,
-		'id' : 1
+		'en' : 1
 	}
 };

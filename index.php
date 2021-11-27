@@ -5,18 +5,21 @@ require_once('koneksi.php');
 
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
+
+$select = "SELECT * FROM seo";
+$data = mysqli_query($db, $select);
+$data = mysqli_fetch_assoc($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jhei-id</title>
-	<?
-	require('config/style.php');
-	?>
+	<? require_once('komponen/seo.php'); ?>
+	<title>Jheina Siap Seduh</title>
+	<? require('config/style.php'); ?>
 </head>
 <body>
 	<!-- header -->
@@ -25,6 +28,12 @@ require_once('session_check.php');
 	
 	require ('komponen/kontak-wa.php');
 	require('komponen/mikro-komponen/pesan-modal.php');
+
+	$query= "SELECT * FROM info_web";
+	$result=mysqli_query($db, $query);
+
+	$data = mysqli_fetch_assoc($result);
+	$whatsapp = $data['whatsapp'];
 	?>
 
 	<!-- landing page background -->
@@ -90,16 +99,40 @@ require_once('session_check.php');
 							</button>
 							<?
 							$titleProduk = explode(" ",$produk['nama']);
-							$jheina = $titleProduk[0];
+							
+							// filter jika index ke 0 equal dengan string Jheina, jika tidak maka kosongkan
+							if ($titleProduk[0] == "Jheina") {
+								$jheina = $titleProduk[0];
+							}else{
+								$jheina = "";
+							}
 
 							$titleProduk2 = explode("Jheina",$produk['nama']);
-							$jenis_nya = $titleProduk2[1]; 
+							
+							//filter cek index ke 1 ada atau tidak 
+							if (!isset($titleProduk2[1])) {
+								$jenis_nya = $titleProduk2[0];
+							}else{
+							$jenis_nya = $titleProduk2[1];}
+
+							// filter jika $tittleProduk2[1] nilai nya kosong, diganti ke index ke 0
+							if ($jenis_nya == "") {
+								$jenis_nya = $titleProduk2[0];
+							}else
+							{
+								$jenis_nya = $titleProduk2[1];
+							}
 							?>
 							<h1 class="mt-4">
 								<a class='text-decoration-none'><?=$jheina?></a><?=$jenis_nya?>
 							</h1>
+							<?
+							$harga_database = $produk['harga'];
+							$format_harga = number_format($harga_database,0,",",".");
+							?>
+							<p class="mb-0" style="font-size: 18px; font-family: system-ui;">Rp <?=$format_harga?></p>
 							<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
-								<a href="https://wa.me/6282264120926?text=Hai%20Kak%2C%20Saya%20pesan%20produk%20<?=$produk['nama']?>%20sebanyak%20..." class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
+								<a href="https://wa.me/<?=$whatsapp?>?text=Hai%20Kak%2C%20Saya%20pesan%20produk%20<?=$produk['nama']?>%20<?=$produk['berat']?>%20gr%20sebanyak%20[isi%20mau beli berapa]" class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
 							</p>
 
 							<!-- The Modal -->
@@ -195,7 +228,7 @@ require_once('session_check.php');
 	<div id="artikel" class=" pb-4 mt-5 pt-5">
 
 		<div class="container">
-			<h1 class="judul-produk text-center">POSTINGAN</h1>
+			<h1 class="judul-produk text-center">ARTIKEL</h1>
 			<p class="text-center mb-5">Kami Menawarkan Postingan Berupa Artikel dan Juga Produk, Cek Secara Berkala Agar Tidak Ketinggalan Info Terbaru!</p>
 
 			<!-- batas row -->

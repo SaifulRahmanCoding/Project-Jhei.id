@@ -3946,6 +3946,14 @@ textarea.form-control-lg {
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+.SEO .form-check-label{
+  font-weight: 400!important;
+}
+#page-content-wrapper #form{
+  font-family: "calibri" !important;
+  max-width: 700px !important;
+  margin: auto;
+}
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
     transition: none;
@@ -11342,7 +11350,14 @@ body.sb-sidenav-toggled #sidebar-wrapper {
   /*background-color: #FFE9E1 !important;*/
 }
 #carousel-admin img{
-  min-width: 400px;
+  min-width: 200px;
+}
+
+#form .preview-carosuel{
+  width: 400px;
+}
+#form .preview{
+  width: 250px;
 }
 
 #dashboard .bungkus{
@@ -11422,4 +11437,14 @@ table{
 
 .table-responsive{
   padding: 0;
+}
+
+.form-dashboard-web form i{
+  font-size: 20px !important;
+}
+/*#form .seo-form form input.form-control,#form .seo-form form textarea.form-control{
+  background-color: #fff;
+}*/
+#info-web .form-dashboard-web textarea.form-control ,#info-web .form-dashboard-web input.form-control{
+    background-color: #F9F9F9;
 }

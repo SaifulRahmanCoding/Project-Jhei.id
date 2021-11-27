@@ -70,7 +70,7 @@ if ($sessionStatus == false) {
 
 								<div class="col-5 box-postingan p-2 pt-4 pb-4 text-center">
 									<h1 class="fw-bolder"><?=$jumlah_postingan?></h1>
-									<a class="text-decoration-none text-secondary fw-bolder">Postingan</a>
+									<a class="text-decoration-none text-secondary fw-bolder">Artikel</a>
 								</div>
 
 								<div class="col-5 p-2 text-center d-flex justify-content-start align-items-center">
@@ -91,7 +91,7 @@ if ($sessionStatus == false) {
 
 								<div class="col-5 box-carousel p-2 pt-4 pb-4 text-center">
 									<h1 class="fw-bolder"><?=$jumlah_carousel?></h1>
-									<a class="text-decoration-none text-secondary fw-bolder">Carousel</a>
+									<a class="text-decoration-none text-secondary fw-bolder">Promo</a>
 								</div>
 
 								<div class="col-5 p-2 text-center d-flex justify-content-start align-items-center">
@@ -104,11 +104,6 @@ if ($sessionStatus == false) {
 
 				</div>
 			</div>
-
-			<!-- <div class="footer-admin bg-light" style="widows: 100%;">
-				ajshfasbf
-			</div> -->
-
 		</div>
 	</div>
 

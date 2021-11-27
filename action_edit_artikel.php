@@ -66,6 +66,15 @@ else {
 	exit();
 } //status error
 
+if (isset($_POST['keywords'])) {
+	$keywords = $_POST['keywords'];
+}
+else {
+	echo "Error dari keywords";
+	exit();
+} //status error
+
+
 // mengambil data file upload
 $files = $_FILES['foto'];
 $path = "upload/artikel/";
@@ -98,7 +107,8 @@ $query="UPDATE artikel SET
 		judul = '{$judulArtikel}', 
 		konten = '{$konten}',
 		jenis_postingan = '{$jenisPostingan}',
-		tanggal = '{$tanggal}'
+		tanggal = '{$tanggal}',
+		keywords = '{$keywords}'
 		WHERE id_artikel = '{$idArtikel}'";
 
 // mengeksekusi MySQL Query

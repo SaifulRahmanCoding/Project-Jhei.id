@@ -55,17 +55,22 @@ body{
 
 /*caption landing page*/
 .landing-page .judul{
-	font-size: 58px;
-	font-family: Poppins-Bold;
+	font-size: 55px;
+	font-family: "Poppins-Bold";
 }
 .landing-page .judul a{
-	font-size: 58px;
-	font-family: Poppins-Bold;
+	font-size: 55px;
+	font-family: "Poppins-Bold";
 	color: coral !important;
 
 }
 /*end*/
-
+.judul-modal-wa{
+	font-family: UI-Bold;
+}
+.judul-modal-wa span{
+	font-family: UI-Bold;
+}
 /*nav*/
 .navbar{
 	/*background-color: #ADC2A9;*/
@@ -156,7 +161,7 @@ body{
 
 }
 #form h3, #form h2{
-	font-family: Poppins-Regular;
+	font-family: "calibri";
 }
 #form img{
 	width: 30%;
@@ -179,7 +184,7 @@ body{
 	text-decoration: none;
 }
 #form label{
-	font-weight: 600;
+
 }
 input:focus, textarea, select:focus{
 	box-shadow: none !important;
@@ -200,9 +205,9 @@ input:focus, textarea, select:focus{
 	
 }
 #wa{
-	font-size: 35px;
+	font-size: 24px;
 	border-radius: 50%;
-	padding: 2px 12px 0px 12px;
+	padding: 8px 11px 5px 12px;
 	color: #FFFFFF;
 	background-color: #01F118;
 	cursor: pointer;
@@ -211,6 +216,7 @@ input:focus, textarea, select:focus{
 
 }
 #kontak .keterangan.wa{
+	font-size: 18px;
 	background-color: #B1FA9B;
 	text-align: center;
 	border-radius: 20px;
@@ -378,7 +384,7 @@ iframe{
 	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.3);
 }
 #artikel .card img{
-	height: 210px;
+	height: 180px;
 	object-fit: cover;
 
 }
@@ -393,7 +399,7 @@ iframe{
 }
 #artikel .card h1{
 	transition: 0.5s;
-	font-size: 18px;
+	font-size: 17px;
 	font-family: UI-Bold;
 
 }
@@ -538,15 +544,18 @@ nav .active{
 	display: none;
 }
 .nav768-up a,.nav-in-mobile a{
-	color: #fff;
+	color: #000;
 	transition: 0.5s;
-	font-size: 18px;
-	background-color: #000;
+	font-size: 17px;
 	margin-bottom: 30px !important;
+	font-weight: 600;
 }
 .nav768-up a:hover, .nav-in-mobile a:hover{
 	text-decoration: underline !important;
 	transition: 0.5s;
+}
+.nav768-up p,.nav-in-mobile p{
+	font-size: 17px;
 }
 figure{
 	text-align: center !important;
@@ -554,6 +563,11 @@ figure{
 figure img{
 	width: 80%;
 	max-height: 300px;
+}
+#sidebar-artikel{
+	height: 100%; 
+	position: sticky; 
+	top: 70px;
 }
 #sidebar-artikel a .box-side{
 	box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.1) !important;
@@ -794,5 +808,11 @@ figure img{
 	}
 	#detail-artikel .box-side .gambar-posting img{
 		max-height: 90px;
+	}
+	.tab-pane .ket span{
+		font-size: 17px;
+	}
+	#sidebar-artikel{
+		position: static;
 	}
 }

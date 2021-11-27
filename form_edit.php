@@ -26,6 +26,7 @@ $result = mysqli_query($db,$query);
 
 foreach($result as $carousel){
 	$foto = $carousel['foto'];
+	$kode = $carousel['ket_carousel'];
 }
 
 ?>
@@ -61,14 +62,14 @@ foreach($result as $carousel){
 
 							<div class="col-12 p-3 p-sm-5 bg-white">
 
-								<h3 align="center" class="mb-2">Edit Foto Carousel</h3>
+								<h2 align="center" class="mb-5">Edit Promo</h2>
 
-								<form action="action_edit.php" method="POST" enctype="multipart/form-data">
+								<form action="action_edit_carousel.php" method="POST" enctype="multipart/form-data">
 
 									<input type="hidden" name="idcarousel" value='<? echo $id_carousel;?>'>
 
 									<div class="form-group mb-3 text-center">
-										<img src="<?=$foto?>" class="preview">
+										<img src="<?=$foto?>" class="preview-carosuel">
 									</div>
 
 									<div class="form-group mb-2">
@@ -78,6 +79,14 @@ foreach($result as $carousel){
 										<input name="foto" id="foto" class="form-control" type="file">
 
 										<p class="card-text mt-1" style="font-size: 10px; color: red !important;">*di sarankan upload gambar ratio WideScreen [ 16 : 9 ]</p>
+
+									</div>
+
+									<div class="form-group mb-3">
+
+										<label for="ketCarousel" class="mb-2">Kode Promo/ Voucher</label>
+
+										<input name="ketCarousel" id="ketCarousel"  class="form-control" type="text" placeholder="contoh : B2GET1MERDEKA" value="<?=$kode?>" required>
 
 									</div>
 

@@ -5,12 +5,18 @@ require_once('koneksi.php');
 
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
+
+$select = "SELECT * FROM seo";
+$data = mysqli_query($db, $select);
+$data = mysqli_fetch_assoc($data);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<? require_once('komponen/seo.php'); ?>
 	<title>Tentang Kami</title>
 	<?
 	require('config/style.php');
@@ -58,6 +64,7 @@ require_once('session_check.php');
 
 		</div>
 	</div>
+	
 	<?
 	require('komponen/footer.php');
 	?>

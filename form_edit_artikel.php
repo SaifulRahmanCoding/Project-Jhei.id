@@ -30,6 +30,7 @@ foreach($result as $artikel){
 	$konten = $artikel['konten'];
 	$jenisPostingan = $artikel['jenis_postingan'];
 	$tanggal = $artikel['tanggal'];
+	$keywords = $artikel['keywords'];
 }
 
 ?>
@@ -64,7 +65,7 @@ foreach($result as $artikel){
 
 							<div class="col-12 p-3 p-sm-5">
 
-								<h3 align="center" class="mb-5">Edit Postingan</h3>
+								<h2 align="center" class="mb-5">Edit Postingan</h2>
 
 								<form action="action_edit_artikel.php" method="POST" enctype="multipart/form-data">
 
@@ -114,6 +115,11 @@ foreach($result as $artikel){
 									<div class="form-group mb-3">
 										<label for="tgl_posting" class="mb-2">Tanggal Posting</label>
 										<input name="tgl_posting" id="tgl_posting"  class="form-control" type="date" value="<?=$tanggal?>" required>
+									</div>
+
+									<div class="form-group mb-3">
+										<label for="keywords" class="mb-2">Keywords / Kata Kunci Postingan</label>
+										<textarea name="keywords" id="keywords" class="form-control" placeholder="contoh : jheina,alami,ektrak jahe,siap seduh" required><?=$keywords?></textarea>
 									</div>
 
 									<div class="form-group mb-3">

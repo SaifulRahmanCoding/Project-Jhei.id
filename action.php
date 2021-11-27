@@ -7,6 +7,14 @@ if ($sessionStatus == false) {
 }
 
 // mnegatasi jika terdapat error pada input
+if (isset($_POST['ketCarousel'])) {
+	$ketCarousel = $_POST['ketCarousel'];
+}
+else {
+	echo "Error dari judul Artikel";
+	exit();
+} //status error
+
 
 // mengambil data file upload
 $files=$_FILES['foto'];
@@ -30,7 +38,7 @@ if ($upload = false ) {
 }
 
 // Menyiapkan Query MySQL untuk dieksekusi
-$query = "INSERT INTO carousel (foto) VALUES ('{$filepath}')";
+$query = "INSERT INTO carousel (foto,ket_carousel) VALUES ('{$filepath}','{$ketCarousel}')";
 
 // mengeksekusi MySQL Query
 $insert = mysqli_query($db, $query);

@@ -66,7 +66,7 @@ foreach($result as $produk){
 
 							<div class="col-12 p-3 p-sm-5 bg-white">
 
-								<h3 align="center" class="mb-2">Edit Produk</h3>
+								<h2 align="center" class="mb-5">Edit Produk</h2>
 
 								<form action="action_edit_produk.php" method="POST" enctype="multipart/form-data">
 

@@ -38,6 +38,14 @@ else {
 	exit();
 } //status error
 
+if (isset($_POST['keywords'])) {
+	$keywords = $_POST['keywords'];
+}
+else {
+	echo "Error dari keywords";
+	exit();
+} //status error
+
 // mengambil data file upload
 $files=$_FILES['fotoArtikel'];
 $path="upload/artikel/";
@@ -60,7 +68,7 @@ if ($upload = false ) {
 }
 
 // Menyiapkan Query MySQL untuk dieksekusi
-$query = "INSERT INTO artikel (foto,judul,jenis_postingan,konten,tanggal) VALUES ('{$filepath}','{$judulArtikel}','{$jenisPostingan}','{$konten}','{$tanggal}')";
+$query = "INSERT INTO artikel (foto,judul,jenis_postingan,konten,tanggal,keywords) VALUES ('{$filepath}','{$judulArtikel}','{$jenisPostingan}','{$konten}','{$tanggal}','{$keywords}')";
 
 // mengeksekusi MySQL Query
 $insert = mysqli_query($db, $query);
