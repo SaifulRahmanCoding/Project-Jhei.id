@@ -2,6 +2,10 @@
 
 require_once('koneksi.php');
 
+require_once('session_check.php');
+if ($sessionStatus == false) {
+	header("Location: index.php");
+}
 // status tidak error
 $error = 0;
 
@@ -59,12 +63,7 @@ $insert = mysqli_query($db, $query);
 if ($insert == false) {
 	echo "Error dalam menambah data. <a href='registration.php'>Kembali</a>";
 }else{
-	?>
-		<div style="background: green; padding: 20px; color: white;">
-			<h2>Sukses Buat Akun!</h2><br>
-			<a href="pemilik.php">Beranda </a>
-			<a href="login.php">Login</a>
-		</div>
-	<?
+
+	header("Location: admin-akun.php");
 }
 ?>

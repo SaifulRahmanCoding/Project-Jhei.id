@@ -21,7 +21,7 @@ $alamat = $data['alamat'];
 				</div>
 
 				<div class="col-6 col-lg-4 mt-3 text-white text-center">
-					<h5>FOLLOW KITA</h5>
+					<h5>IKUTI KAMI</h5>
 					<ul class="contact-us">
 						<li> <a href="<?=$facebook?>"><i class="fab fa-facebook fa-2x"></i><br>jhei.id</a></li>
 						<li><a href="<?=$instagram?>"><i class="fab fa-instagram fa-2x"></i><br>jhei.id</a></li>

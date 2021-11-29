@@ -31,7 +31,7 @@
           <div class="overlay-carousel" style="">
             <div class="bungkus-a d-flex flex-column align-items-center justify-content-center">
               <a href="https://wa.me/<?=$whatsapp?>?text=Halo%20kak%2C%20saya%20pesan%20produk%20dengan%20kode%20promo%20<?=$carousel['ket_carousel']?>.%20apakah%20promo%20masih%20tersedia?" class="text-decoration-none fw-bolder mb-3 mt-5">PESAN</a>
-              <p class="text-white">Silahkan Klik Tombol Berikut Untuk Lanjut Ke Pembelian</p>
+              <p class="text-white text-center">Silahkan Klik Tombol Berikut Untuk Lanjut Ke Pembelian</p>
             </div>
           </div>
 

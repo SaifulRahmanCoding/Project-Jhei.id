@@ -5,7 +5,7 @@
 
 			<!-- navbar brand -->
 			<a class="navbar-brand me-4">
-				<img src="img/jhei.id.png" alt="error"/>
+				<img src="img/Jhei.id.png" />
 				<!-- <p class="mb-0">Jhei-id</p> -->
 			</a>
 
