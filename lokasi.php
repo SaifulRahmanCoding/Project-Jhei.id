@@ -41,8 +41,8 @@ $data = mysqli_fetch_assoc($data);
 			$data = mysqli_fetch_assoc($result);
 			$lokasi = $data['lokasi'];
 			
-			echo $lokasi;
 			?>
+			<iframe src="<?=$lokasi?>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 		</div>
 	</div>
 

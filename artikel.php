@@ -108,7 +108,7 @@ $data = mysqli_fetch_assoc($data);
 					$kueriCari = " ";
 				}
 				else{
-					$kueriCari = "WHERE judul LIKE '%$form_cari%'";	
+					$kueriCari = "WHERE judul LIKE '%$form_cari%'";
 				}
 
 				$search = $kueriCari;

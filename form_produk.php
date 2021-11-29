@@ -89,7 +89,7 @@ if ($sessionStatus == false) {
 								</div>
 
 								<div class="col-12 d-flex justify-content-center">
-									<input type="submit" name="submit" value="Input" class="btn text-white col-6 mt-3 mb-3">
+									<input type="submit" name="submit" value="Simpan" class="btn text-white col-6 mt-3 mb-3">
 									&nbsp
 									<a href="admin-produk.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
 								</div>

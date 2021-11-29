@@ -113,8 +113,9 @@ foreach($result as $artikel){
 									</div>
 
 									<div class="form-group mb-3">
-										<label for="tgl_posting" class="mb-2">Tanggal Posting</label>
-										<input name="tgl_posting" id="tgl_posting"  class="form-control" type="date" value="<?=$tanggal?>" required>
+										<label for="tgl_posting" class="mb-2">Tanggal Posting : </label>
+										<input name="tgl_posting" id="tgl_posting" value="<? echo date("Y/m/d");?>" class="form-control" type="hidden" required>
+										<label class="fw-bolder"><? echo date("Y/m/d");?></label>
 									</div>
 
 									<div class="form-group mb-3">

@@ -82,7 +82,7 @@ $lokasi = $data['lokasi'];
 
 									<div class="col-5 form-group mb-3 mt-3 ms-3 text-center">
 										<label for="lokasi" class="mb-2"><i class="fa fa-map-marked-alt"></i><br> Lokasi Google Maps</label>
-										<textarea name="lokasi" id="lokasi" class="form-control" placeholder="masukkan <iframe> maps" required><?=$lokasi?></textarea>
+										<textarea name="lokasi" id="lokasi" class="form-control" placeholder="masukkan link maps" required><?=$lokasi?></textarea>
 									</div>
 								</div>
 

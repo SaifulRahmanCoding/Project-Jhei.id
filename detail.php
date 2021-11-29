@@ -112,8 +112,30 @@ $data = mysqli_fetch_assoc($data);
 
 					<h3 class="text-center mb-3 mb-sm-4">Postingan Terkait</h3>
 					<?
-					$query = "SELECT * FROM artikel WHERE jenis_postingan = '$jenisPostingan' ORDER BY id_artikel DESC LIMIT 0,4";
+
+					$pecah_keywords = explode(",", $keywords);
+
+					// hitung jumlah keywords di dalam array
+					$jumlah_keywords = count($pecah_keywords);
+
+					// filter jika jumlah keyword lebih dari 4 maka tampilkan 3 kondisi, jika tidak cukup 1
+					// jadi tag yang terambil cuma ada 4 nantinya yang di jadikan patokan, jika lebih dari itu tidak dimasukkan
+					if ($jumlah_keywords>4) {
+						$kunci = "OR keywords LIKE '%$pecah_keywords[1]%' OR keywords LIKE '%$pecah_keywords[2]%' OR keywords LIKE '%$pecah_keywords[3]%' OR keywords LIKE '%$pecah_keywords[4]%'";
+					}else{
+						$kunci = "OR keywords LIKE '%$pecah_keywords[1]%'";
+					}
+
+					// SELECT * FROM `artikel` WHERE keywords LIKE'%jheina%'
+					$query = "SELECT * FROM artikel WHERE jenis_postingan='$jenisPostingan' AND keywords LIKE '%$pecah_keywords[0]%' $kunci ORDER BY id_artikel DESC LIMIT 0,4";
 					$result = mysqli_query($db,$query);
+					$hasil_filter = mysqli_fetch_assoc($result);
+
+					// filter jika hasil dari select diatas judulnya sama dengan yang di tampilkan, maka kosongkan hasil.
+					if ($hasil_filter['judul'] == $judul) {
+						echo "<p class='text-center'>'tidak ada postingan terkait'<p>";
+					}else{
+					
 					foreach($result as $artikel){
 						?>
 						<div class="col-12 ps-1 pe-1">
@@ -143,7 +165,7 @@ $data = mysqli_fetch_assoc($data);
 
 						</div>
 
-						<?}?>
+						<?}}?>
 					</div>
 
 					<div class="col-12 col-sm-8">

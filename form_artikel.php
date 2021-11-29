@@ -69,8 +69,9 @@ if ($sessionStatus == false) {
 									</div>
 
 									<div class="form-group mb-3">
-										<label for="tgl_posting" class="mb-2">Tanggal Posting</label>
-										<input name="tgl_posting" id="tgl_posting"  class="form-control" type="date" required>
+										<label for="tgl_posting" class="mb-2">Tanggal Posting : </label>
+										<input name="tgl_posting" id="tgl_posting" value="<? echo date("Y/m/d");?>" class="form-control" type="hidden" required>
+										<label class="fw-bolder"><? echo date("Y/m/d");?></label>
 									</div>
 
 									<div class="form-group mb-3">
@@ -84,7 +85,7 @@ if ($sessionStatus == false) {
 									</div>
 
 									<div class="col-12 d-flex justify-content-center">
-										<input type="submit" name="submit" value="Input" class="btn text-white col-6 mt-3 mb-3">
+										<input type="submit" name="submit" value="Simpan" class="btn text-white col-6 mt-3 mb-3">
 										&nbsp
 										<a href="admin-postingan.php" class="btn text-white col-6 mt-3 mb-3">Kembali</a>
 									</div>

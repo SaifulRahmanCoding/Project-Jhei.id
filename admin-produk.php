@@ -104,7 +104,7 @@ if ($sessionStatus == false) {
 													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_produk.php?id_produk=<?=$produk['id_produk']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp
 
-													<a class="card-text text-decoration-none text-danger fs-6" href="delete.php?id_produk=<?=$produk['id_produk']?>" onclick="return confirm_delete()">
+													<a class="card-text text-decoration-none text-danger fs-6" href="delete_produk.php?id_produk=<?=$produk['id_produk']?>" onclick="return confirm_delete()">
 														<i class="fa fa-trash-alt"></i>
 													</a>
 												</td>

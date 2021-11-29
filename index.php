@@ -120,8 +120,14 @@ $data = mysqli_fetch_assoc($data);
 								$jenis_nya = $titleProduk2[0];
 							}else
 							{
-								$jenis_nya = $titleProduk2[1];
+								// filter jika tittleProduk index 1 kosong
+								if (empty($titleProduk2[1])) {
+									$jenis_nya = $titleProduk2[0];
+								}else{
+									$jenis_nya = $titleProduk2[1];
+								}
 							}
+
 							?>
 							<h1 class="mt-4">
 								<a class='text-decoration-none'><?=$jheina?></a><?=$jenis_nya?>
@@ -132,7 +138,7 @@ $data = mysqli_fetch_assoc($data);
 							?>
 							<p class="mb-0" style="font-size: 18px; font-family: system-ui;">Rp <?=$format_harga?></p>
 							<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
-								<a href="https://wa.me/<?=$whatsapp?>?text=Hai%20Kak%2C%20Saya%20pesan%20produk%20<?=$produk['nama']?>%20<?=$produk['berat']?>%20gr%20sebanyak%20[isi%20mau beli berapa]" class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">BELI</a>
+								<a href="https://wa.me/<?=$whatsapp?>?text=Hai%20Kak%2C%20Saya%20pesan%20produk%20<?=$produk['nama']?>%20<?=$produk['berat']?>%20gr%20sebanyak%20[isi%20mau beli berapa]" class="detail-produk text-decoration-none pe-4 ps-4 pt-1 pb-1">PESAN</a>
 							</p>
 
 							<!-- The Modal -->

@@ -10,6 +10,8 @@
 
 		<a class="list-group-item p-3" href="pemilik.php"><i class="fas fa-tachometer-alt"></i>&nbsp&nbsp Dashboard</a>
 
+		<a class="list-group-item p-3" href="admin-akun.php"><i class="fas fa-user-circle"></i>&nbsp&nbsp Akun</a>
+
 		<a class="list-group-item p-3" href="admin-produk.php"><i class="fas fa-shopping-bag"></i>&nbsp&nbsp Produk</a>
 
 		<a class="list-group-item p-3" href="admin-postingan.php"><i class="fas fa-newspaper"></i>&nbsp&nbsp Artikel</a>
