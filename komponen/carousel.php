@@ -2,7 +2,7 @@
   <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
 
-      <?
+      <?php
               // pemanggilan data dari tabel promo
       $query= "SELECT * FROM carousel ORDER BY id_carousel DESC";
       $result=mysqli_query($db, $query);
@@ -26,17 +26,17 @@
           $aktif = " ";
         }
         ?>
-        <div class="carousel-item <?=$aktif?>" style="position: relative;">
-          <img src="<?=$carousel['foto']?>" class="d-block w-100" alt="...">
+        <div class="carousel-item <?php echo $aktif?>" style="position: relative;">
+          <img src="<?php echo $carousel['foto']?>" class="d-block w-100" alt="...">
           <div class="overlay-carousel" style="">
             <div class="bungkus-a d-flex flex-column align-items-center justify-content-center">
-              <a href="https://wa.me/<?=$whatsapp?>?text=Halo%20kak%2C%20saya%20pesan%20produk%20dengan%20kode%20promo%20<?=$carousel['ket_carousel']?>.%20apakah%20promo%20masih%20tersedia?" class="text-decoration-none fw-bolder mb-3 mt-5">PESAN</a>
+              <a href="https://wa.me/<?php echo $whatsapp?>?text=Halo%20kak%2C%20saya%20pesan%20produk%20dengan%20kode%20promo%20<?php echo $carousel['ket_carousel']?>.%20apakah%20promo%20masih%20tersedia?" class="text-decoration-none fw-bolder mb-3 mt-5">PESAN</a>
               <p class="text-white text-center">Silahkan Klik Tombol Berikut Untuk Lanjut Ke Pembelian</p>
             </div>
           </div>
 
         </div>
-        <?}?>
+        <?php } ?>
         <!-- end foreach -->
 
       </div>

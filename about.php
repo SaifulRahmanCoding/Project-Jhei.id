@@ -1,4 +1,4 @@
-<?
+<?php
 $halaman = 'about';
 // koneksi ke database
 require_once('koneksi.php');
@@ -16,9 +16,9 @@ $data = mysqli_fetch_assoc($data);
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<? require_once('komponen/seo.php'); ?>
+	<?php require_once('komponen/seo.php'); ?>
 	<title>Tentang Kami</title>
-	<?
+	<?php
 	require('config/style.php');
 	require('config/script.php');
 	?>
@@ -26,7 +26,7 @@ $data = mysqli_fetch_assoc($data);
 <body>
 	<!-- header -->
 	<div id="header">
-		<?
+		<?php
 		require('komponen/navbar.php');
 		?>
 	</div>
@@ -65,7 +65,7 @@ $data = mysqli_fetch_assoc($data);
 		</div>
 	</div>
 	
-	<?
+	<?php
 	require('komponen/footer.php');
 	?>
 </body>

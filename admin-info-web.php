@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -26,19 +26,19 @@ $lokasi = $data['lokasi'];
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Halaman Admin</title>
-	<?
+	<title>Update Info Web</title>
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -54,35 +54,35 @@ $lokasi = $data['lokasi'];
 								<div class="d-flex justify-content-center">
 									<div class="col-5 form-group mb-3 mt-3 me-3 text-center">
 										<label for="no_wa" class="mb-2"><i class="fab fa-whatsapp"></i><br> Nomor Whatsapp</label>
-										<input name="no_wa" id="no_wa" class="form-control" type="number" value="<?=$whatsapp?>" placeholder="Masukkan no WA" required>
+										<input name="no_wa" id="no_wa" class="form-control" type="number" value="<?php echo $whatsapp?>" placeholder="Masukkan no WA" required>
 									</div>
 
 									<div class="col-5 form-group mb-3 mt-3 ms-3 text-center">
 										<label for="email" class="mb-2"><i class="far fa-envelope"></i><br> Email</label>
-										<input name="email" id="email" class="form-control" type="email" value="<?=$email?>" placeholder="Masukkan Email" required>
+										<input name="email" id="email" class="form-control" type="email" value="<?php echo $email?>" placeholder="Masukkan Email" required>
 									</div>
 								</div>
 
 								<div class="d-flex justify-content-center">
 									<div class="col-5 form-group mb-3 mt-3 me-3 text-center">
 										<label for="facebook" class="mb-2"><i class="fab fa-facebook"></i><br> Facebook</label>
-										<textarea name="facebook" id="facebook" class="form-control" placeholder="Masukkan Link facebook" required><?=$facebook?></textarea>
+										<textarea name="facebook" id="facebook" class="form-control" placeholder="Masukkan Link facebook" required><?php echo $facebook?></textarea>
 									</div>
 
 									<div class="col-5 form-group mb-3 mt-3 ms-3 text-center">
 										<label for="instagram" class="mb-2"><i class="fab fa-instagram"></i><br> Instagram</label>
-										<textarea name="instagram" id="instagram" class="form-control" placeholder="Masukkan Link instagram" required><?=$instagram?></textarea>
+										<textarea name="instagram" id="instagram" class="form-control" placeholder="Masukkan Link instagram" required><?php echo $instagram?></textarea>
 									</div>
 								</div>
 								<div class="d-flex justify-content-center">
 									<div class="col-5 form-group mb-3 mt-3 me-3 text-center">
 										<label for="alamat" class="mb-2"><i class="fa fa-map-marker-alt"></i><br> Alamat/ tempat Usaha</label>
-										<textarea name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat Tempat Usaha" required><?=$alamat?></textarea>
+										<textarea name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat Tempat Usaha" required><?php echo $alamat?></textarea>
 									</div>
 
 									<div class="col-5 form-group mb-3 mt-3 ms-3 text-center">
 										<label for="lokasi" class="mb-2"><i class="fa fa-map-marked-alt"></i><br> Lokasi Google Maps</label>
-										<textarea name="lokasi" id="lokasi" class="form-control" placeholder="masukkan link maps" required><?=$lokasi?></textarea>
+										<textarea name="lokasi" id="lokasi" class="form-control" placeholder="masukkan link maps" required><?php echo $lokasi?></textarea>
 									</div>
 								</div>
 
@@ -101,6 +101,6 @@ $lokasi = $data['lokasi'];
 		</div>
 	</div>
 
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>

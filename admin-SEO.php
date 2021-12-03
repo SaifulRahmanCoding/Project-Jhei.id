@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -30,19 +30,19 @@ if (is_null($data)) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Halaman Admin</title>
-	<?
+	<title>Update SEO</title>
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -61,17 +61,17 @@ if (is_null($data)) {
 
 									<div class="form-group mb-3">
 										<label for="author" class="mb-2">Author</label>
-										<input name="author" id="author" class="form-control" type="text" value="<?=$data['author']?>"  required>
+										<input name="author" id="author" class="form-control" type="text" value="<?php echo $data['author']?>"  required>
 									</div>
 
 									<div class="form-group mb-3">
 										<label for="description" class="mb-2">Deskripsi</label>
-										<textarea name="description" id="description" class="form-control" required><?=$data['description']?></textarea>
+										<textarea name="description" id="description" class="form-control" required><?php echo $data['description']?></textarea>
 									</div>
 
 									<div class="form-group mb-3">
 										<label for="keywords" class="mb-2">Keywords / Kata Kunci</label>
-										<textarea name="keywords" id="keywords" class="form-control" required><?=$data['keywords']?></textarea>
+										<textarea name="keywords" id="keywords" class="form-control" required><?php echo $data['keywords']?></textarea>
 									</div>
 
 									<div class="d-flex justify-content-center mt-4">
@@ -79,12 +79,12 @@ if (is_null($data)) {
 											<label for="robots">Robots Index</label>
 
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="robots_index" id="index" value="1" required <?=($data['robot_index'] ? "checked" : "")?>>
+												<input class="form-check-input" type="radio" name="robots_index" id="index" value="1" required <?php echo ($data['robot_index'] ? "checked" : "")?>>
 												<label class="form-check-label" for="index">Index</label>
 											</div>
 
 											<div class="form-check disabled">
-												<input class="form-check-input" type="radio" name="robots_index" id="noindex" value="0" required <?=(!$data['robot_index'] ? "checked" : "")?>>
+												<input class="form-check-input" type="radio" name="robots_index" id="noindex" value="0" required <?php echo (!$data['robot_index'] ? "checked" : "")?>>
 												<label class="form-check-label" for="noindex">No-Index</label>
 											</div>
 										</div>
@@ -93,12 +93,12 @@ if (is_null($data)) {
 											<label for="robots">Robots Follow</label>
 
 											<div class="form-check">
-												<input class="form-check-input" type="radio" name="robots_follow" id="follow" value="1" required <?=($data['robot_follow'] ? "checked" : "")?>>
+												<input class="form-check-input" type="radio" name="robots_follow" id="follow" value="1" required <?php echo ($data['robot_follow'] ? "checked" : "")?>>
 												<label class="form-check-label" for="follow">Follow</label>
 											</div>
 
 											<div class="form-check disabled">
-												<input class="form-check-input" type="radio" name="robots_follow" id="nofollow" value="0" required <?=(!$data['robot_follow'] ? "checked" : "")?>>
+												<input class="form-check-input" type="radio" name="robots_follow" id="nofollow" value="0" required <?php echo (!$data['robot_follow'] ? "checked" : "")?>>
 												<label class="form-check-label" for="nofollow">No-Follow</label>
 											</div>
 										</div>
@@ -125,6 +125,6 @@ if (is_null($data)) {
 		</div>
 	</div>
 
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>

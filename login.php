@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 ?>
@@ -8,8 +8,8 @@ require_once('koneksi.php');
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<?
+	<title>Login</title>
+	<?php
 	require('config/style.php');
 	require('config/script.php');
 	?>

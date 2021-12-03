@@ -1,5 +1,5 @@
 <?
-$db=new mysqli("jongkreatif.com","u5250287_jheina","jheina1234","u5250287_jheina");
+$db=new mysqli("localhost","root","","jhei-id");
 
 // cek koneksi
 if ($db->connect_error) {

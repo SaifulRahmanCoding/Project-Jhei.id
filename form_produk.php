@@ -1,4 +1,4 @@
-<?
+<?php
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
 
@@ -12,18 +12,18 @@ if ($sessionStatus == false) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Input Produk</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -85,7 +85,7 @@ if ($sessionStatus == false) {
 
 								<div class="form-group mb-3">
 									<label for="caption" class="mb-2">Deskripsi Produk</label>
-									<textarea name="caption" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi caption produk jika ada!"></textarea>
+									<textarea name="caption" class="ckeditor form-control" id="kontenku" rows="8" placeholder="isi caption produk jika ada!"></textarea>
 								</div>
 
 								<div class="col-12 d-flex justify-content-center">
@@ -106,6 +106,12 @@ if ($sessionStatus == false) {
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>
+<script type="text/javascript">
+	CKEDITOR.replace('kontenku', {
+		filebrowserUploadMethod:"form",
+		filebrowserUploadUrl:"upload.php"
+	});
+</script>

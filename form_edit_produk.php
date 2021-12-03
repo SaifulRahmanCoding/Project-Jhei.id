@@ -1,4 +1,4 @@
-<?
+<?php
 // menmapilkan file koneksi
 require_once('koneksi.php');
 
@@ -41,18 +41,18 @@ foreach($result as $produk){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Edit Produk</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -70,10 +70,10 @@ foreach($result as $produk){
 
 								<form action="action_edit_produk.php" method="POST" enctype="multipart/form-data">
 
-									<input type="hidden" name="idProduk" value='<? echo $idProduk;?>'>
+									<input type="hidden" name="idProduk" value='<?php echo $idProduk;?>'>
 
 									<div class="form-group mb-3 text-center">
-										<img src="<?=$foto?>" class="preview">
+										<img src="<?php echo $foto?>" class="preview">
 									</div>
 
 									<div class="form-group mb-2">
@@ -90,7 +90,7 @@ foreach($result as $produk){
 
 										<label for="namaProduk" class="mb-2">Nama Produk</label>
 
-										<input name="namaProduk" id="namaProduk"  class="form-control" type="text" value="<?=$namaProduk?>" placeholder="Nama Produk" required>
+										<input name="namaProduk" id="namaProduk"  class="form-control" type="text" value="<?php echo $namaProduk?>" placeholder="Nama Produk" required>
 
 									</div>
 
@@ -98,7 +98,7 @@ foreach($result as $produk){
 
 										<label for="harga" class="mb-2">Harga ( Rp )</label>
 
-										<input name="harga" id="harga"  class="form-control" type="number" value="<?=$harga?>" required>
+										<input name="harga" id="harga"  class="form-control" type="number" value="<?php echo $harga?>" required>
 
 									</div>
 
@@ -106,7 +106,7 @@ foreach($result as $produk){
 
 										<label for="berat" class="mb-2">Berat ( gram ) </label>
 
-										<input name="berat" id="berat"  class="form-control" type="number" value="<?=$berat?>" required>
+										<input name="berat" id="berat"  class="form-control" type="number" value="<?php echo $berat?>" required>
 
 									</div>
 
@@ -116,37 +116,37 @@ foreach($result as $produk){
 
 										<select id="stok" class="form-control" name="stok" required>
 
-											<? if ($stok == "") {?>
+											<?php if ($stok == "") {?>
 
 												<option value="READY STOK">READY STOK</option>
 												<option value="PRE ORDER">PRE ORDER</option>
 												<option value="KOSONG">KOSONG</option>
 
-											<? } ?>
+											<?php } ?>
 
-											<? if ($stok == "READY STOK") {?>
+											<?php if ($stok == "READY STOK") {?>
 
 												<option value="READY STOK">READY STOK</option>
 												<option value="PRE ORDER">PRE ORDER</option>
 												<option value="KOSONG">KOSONG</option>
 
-											<? } ?>
+											<?php } ?>
 
-											<? if ($stok == "PRE ORDER") {?>
+											<?php if ($stok == "PRE ORDER") {?>
 
 												<option value="PRE ORDER">PRE ORDER</option>
 												<option value="READY STOK">READY STOK</option>
 												<option value="KOSONG">KOSONG</option>
 
-											<? } ?>
+											<?php } ?>
 
-											<? if ($stok == "KOSONG") {?>
+											<?php if ($stok == "KOSONG") {?>
 
 												<option value="KOSONG">KOSONG</option>
 												<option value="READY STOK">READY STOK</option>
 												<option value="PRE ORDER">PRE ORDER</option>
 
-											<? } ?>
+											<?php } ?>
 
 
 										</select>
@@ -154,7 +154,7 @@ foreach($result as $produk){
 
 									<div class="form-group mb-3">
 										<label for="caption" class="mb-2">Caption</label>
-										<textarea name="caption" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi caption produk"><?=$caption?></textarea>
+										<textarea name="caption" class="ckeditor form-control" id="kontenku" rows="8" placeholder="isi caption produk"><?php echo $caption?></textarea>
 									</div>
 
 									<div class="col-12 d-flex justify-content-center">
@@ -177,7 +177,13 @@ foreach($result as $produk){
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 
 </body>
 </html>
+<script type="text/javascript">
+	CKEDITOR.replace('kontenku', {
+		filebrowserUploadMethod:"form",
+		filebrowserUploadUrl:"upload.php"
+	});
+</script>

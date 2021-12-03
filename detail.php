@@ -1,4 +1,4 @@
-<?
+<?php
 $halaman = 'artikel';
 // koneksi ke database
 require_once('koneksi.php');
@@ -35,24 +35,24 @@ $data = mysqli_fetch_assoc($data);
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="<?=$data['description']?>">
-	<? if (empty($keywords)) {?>
+	<meta name="description" content="<?php echo $data['description']?>">
+	<?php if (empty($keywords)) {?>
 	<meta name="keywords" content=" ">
-	<?}else{ ?>
-	<meta name="keywords" content="<?=$keywords?>">
-	<?}?>
-	<meta name="author" content="<?=$data['author']?>">
-	<meta name="robots" content="<?=($data['robot_index'] ? "index" : "noindex")?>,<?=($data['robot_follow'] ? "follow" : "nofollow")?>">
+	<?php }else{ ?>
+	<meta name="keywords" content="<?php echo $keywords?>">
+	<?php }?>
+	<meta name="author" content="<?php echo $data['author']?>">
+	<meta name="robots" content="<?php echo ($data['robot_index'] ? "index" : "noindex")?>,<?php echo ($data['robot_follow'] ? "follow" : "nofollow")?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?=$judul?></title>
-	<?
+	<title><?php echo $judul?></title>
+	<?php
 	require('config/style.php');
 	require('config/script.php');
 	?>
 </head>
 <body>
 	<!-- header -->
-	<?
+	<?php
 	require('komponen/navbar.php');
 	require ('komponen/kontak-wa.php');
 	require('komponen/mikro-komponen/pesan-modal.php');
@@ -62,10 +62,10 @@ $data = mysqli_fetch_assoc($data);
 
 		<div class="container">
 			<div class="back">
-				<?
+				<?php
 				require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
 				?>
-				<a href="index.php" class="text-decoration-none text-dark">Home</a> / <a href="artikel.php" class="text-decoration-none text-dark">Artikel</a> / <?
+				<a href="index.php" class="text-decoration-none text-dark">Home</a> / <a href="artikel.php" class="text-decoration-none text-dark">Artikel</a> / <?php
 				if (strlen($judul)>40) {
 					echo substr($judul,0,40)."...";
 
@@ -79,16 +79,16 @@ $data = mysqli_fetch_assoc($data);
 					<div class="col-12 d-flex flex-column justify-content-center p-3 p-sm-4 p-lg-5">
 						
 						<div class="konten-berita text-center mb-2">
-							<h2 class="judul-artikel-detail mb-3 mb-sm-4"><?=$artikel['judul'];?></h2>
-							<a class="text-decoration-none text-dark"><? echo "$hari $bulan $tahun"; ?></a><br><br>
-							<img src="<?=$foto?>" alt="">
+							<h2 class="judul-artikel-detail mb-3 mb-sm-4"><?php echo $artikel['judul'];?></h2>
+							<a class="text-decoration-none text-dark"><?php echo "$hari $bulan $tahun"; ?></a><br><br>
+							<img src="<?php echo $foto?>" alt="">
 						</div>
 						
-						<p class="isi-konten-postingan"><?=$konten?></p>
+						<p class="isi-konten-postingan"><?php echo $konten?></p>
 
 						<p class="tags d-inline mt-3 mt-sm-5">
 							Kata Kunci : 
-							<?
+							<?php
 
 							if (empty($keywords)) {
 								echo "";
@@ -96,8 +96,8 @@ $data = mysqli_fetch_assoc($data);
 							else{	
 								$pecah_keywords = explode(",", $keywords);
 								foreach ($pecah_keywords as $tags) {?>
-									<span class="me-1 ps-1 pe-1 bg-light rounded text-secondary shadow-sm"><?=$tags?></span>	
-								<?}
+									<span class="me-1 ps-1 pe-1 bg-light rounded text-secondary shadow-sm"><?php echo $tags?></span>	
+								<?php }
 							}?>
 						</p>
 
@@ -105,13 +105,13 @@ $data = mysqli_fetch_assoc($data);
 
 				</div>
 
-				<? require('komponen/mikro-komponen/navArtikel-in-mobile.php'); ?>
+				<?php require('komponen/mikro-komponen/navArtikel-in-mobile.php'); ?>
 
 				<div class="col-12 col-sm-4 pt-5 pt-sm-0 mt-3 mt-sm-5" id="sidebar-artikel">
 
 
 					<h3 class="text-center mb-3 mb-sm-4">Postingan Terkait</h3>
-					<?
+					<?php
 
 					$pecah_keywords = explode(",", $keywords);
 
@@ -140,12 +140,12 @@ $data = mysqli_fetch_assoc($data);
 						?>
 						<div class="col-12 ps-1 pe-1">
 
-							<a href="detail.php?id_artikel=<?=$artikel['id_artikel']?>" class="text-decoration-none text-dark">
+							<a href="detail.php?id_artikel=<?php echo $artikel['id_artikel']?>" class="text-decoration-none text-dark">
 								<div class="col-12 box-side row pt-2 pb-2 mb-2 ms-0">
 
 									<div class="judul-sidebar-artikel col-7 col-lg-9">
 										<p>
-											<?
+											<?php
 											if (strlen($artikel['judul'])>45) {
 												echo substr($artikel['judul'],0,45)."...";
 
@@ -153,26 +153,26 @@ $data = mysqli_fetch_assoc($data);
 											?>
 										</p>
 									</div>
-									<div class="col-5 col-lg-3 gambar-posting"><img src="<?=$artikel['foto'];?>" alt=""></div>
+									<div class="col-5 col-lg-3 gambar-posting"><img src="<?php echo $artikel['foto'];?>" alt=""></div>
 									<div class="col-12">
-										<?
+										<?php
 										require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
 										?>
-										<p class="text-decoration-none text-success p-0 m-0"><?=$artikel['jenis_postingan']?><span class="text-decoration-none text-dark"> | <? echo "$hari $bulan $tahun"; ?></span></p>
+										<p class="text-decoration-none text-success p-0 m-0"><?php echo $artikel['jenis_postingan']?><span class="text-decoration-none text-dark"> | <?php echo "$hari $bulan $tahun"; ?></span></p>
 									</div>
 								</div>
 							</a>
 
 						</div>
 
-						<?}}?>
+						<?php }}?>
 					</div>
 
 					<div class="col-12 col-sm-8">
 					<div class="nav768-up d-flex justify-content-center">
 
 						<div class="col-6 col-sm-5 col-lg-6 text-end ps-0 p-3 m-2">
-							<?
+							<?php
 							$query = "SELECT * FROM artikel WHERE id_artikel<$idArtikel ORDER BY id_artikel DESC LIMIT 1";
 							$result = mysqli_query($db,$query);
 
@@ -192,7 +192,7 @@ $data = mysqli_fetch_assoc($data);
 							}
 							?>
 							<p>Artikel Sebelumnya</p>
-							<a <?=$linkNav?> class="text-decoration-none"><?
+							<a <?php echo $linkNav?> class="text-decoration-none"><?php
 							if (strlen($artikel['judul'])>40) {
 								echo substr($artikel['judul'],0,40)."...";
 
@@ -201,7 +201,7 @@ $data = mysqli_fetch_assoc($data);
 						</div>
 
 						<div class="col-6 col-sm-5 col-lg-6 p-3 m-2 pe-0">
-							<?
+							<?php
 							$query = "SELECT * FROM artikel WHERE id_artikel>$idArtikel ORDER BY id_artikel ASC LIMIT 1";
 							$result = mysqli_query($db,$query);
 
@@ -221,7 +221,7 @@ $data = mysqli_fetch_assoc($data);
 							}
 							?>
 							<p>Artikel Selanjutnya</p>
-							<a <?=$linkNav?> class="text-decoration-none"><?
+							<a <?php echo $linkNav?> class="text-decoration-none"><?php
 							if (strlen($artikel['judul'])>40) {
 								echo substr($artikel['judul'],0,40)."...";
 
@@ -235,7 +235,7 @@ $data = mysqli_fetch_assoc($data);
 		<!-- end container -->
 	</div>
 
-	<?
+	<?php
 	require('komponen/footer.php');
 	?>
 </body>

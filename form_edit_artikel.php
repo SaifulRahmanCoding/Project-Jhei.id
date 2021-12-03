@@ -1,4 +1,4 @@
-<?
+<?php
 // menmapilkan file koneksi
 require_once('koneksi.php');
 
@@ -40,18 +40,18 @@ foreach($result as $artikel){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Edit Postingan</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -69,10 +69,10 @@ foreach($result as $artikel){
 
 								<form action="action_edit_artikel.php" method="POST" enctype="multipart/form-data">
 
-									<input type="hidden" name="idArtikel" value='<? echo $idArtikel;?>'>
+									<input type="hidden" name="idArtikel" value='<?php echo $idArtikel;?>'>
 
 									<div class="form-group mb-3 text-center">
-										<img src="<?=$foto?>" class="preview">
+										<img src="<?php echo $foto?>" class="preview">
 									</div>
 
 									<div class="form-group mb-2">
@@ -87,7 +87,7 @@ foreach($result as $artikel){
 
 										<label for="judulArtikel" class="mb-2">Judul Postingan</label>
 
-										<input name="judulArtikel" id="judulArtikel"  class="form-control" type="text" value="<?=$judulArtikel?>" placeholder="Judul Artikel" required>
+										<input name="judulArtikel" id="judulArtikel"  class="form-control" type="text" value="<?php echo $judulArtikel?>" placeholder="Judul Artikel" required>
 
 									</div>
 
@@ -96,36 +96,36 @@ foreach($result as $artikel){
 										<label for="jenisPostingan" class="mb-2">Jenis Postingan</label>
 
 										<select id="jenisPostingan" class="form-control" name="jenisPostingan" required>
-											<? if ($jenisPostingan == "PRODUK") { ?>
+											<?php if ($jenisPostingan == "PRODUK") { ?>
 
 												<option value="PRODUK">PRODUK</option>
 												<option value="ARTIKEL">ARTIKEL</option>
 
-												<?}?>
+												<?php } ?>
 
-											<? if ($jenisPostingan == "ARTIKEL") { ?>
+											<?php if ($jenisPostingan == "ARTIKEL") { ?>
 												<option value="ARTIKEL">ARTIKEL</option>
 												<option value="PRODUK">PRODUK</option>
 
-												<?}?>
+												<?php } ?>
 
 										</select>
 									</div>
 
 									<div class="form-group mb-3">
 										<label for="tgl_posting" class="mb-2">Tanggal Posting : </label>
-										<input name="tgl_posting" id="tgl_posting" value="<? echo date("Y/m/d");?>" class="form-control" type="hidden" required>
-										<label class="fw-bolder"><? echo date("Y/m/d");?></label>
+										<input name="tgl_posting" id="tgl_posting" value="<?php echo date("Y/m/d");?>" class="form-control" type="hidden" required>
+										<label class="fw-bolder"><?php echo date("Y/m/d");?></label>
 									</div>
 
 									<div class="form-group mb-3">
 										<label for="keywords" class="mb-2">Keywords / Kata Kunci Postingan</label>
-										<textarea name="keywords" id="keywords" class="form-control" placeholder="contoh : jheina,alami,ektrak jahe,siap seduh" required><?=$keywords?></textarea>
+										<textarea name="keywords" id="keywords" class="form-control" placeholder="contoh : jheina,alami,ektrak jahe,siap seduh" required><?php echo $keywords?></textarea>
 									</div>
 
 									<div class="form-group mb-3">
 										<label for="konten" class="mb-2">konten</label>
-										<textarea name="konten" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi konten artikel"><?=$konten?></textarea>
+										<textarea name="konten" class="ckeditor form-control" id="kontenku" rows="8" placeholder="isi konten artikel"><?php echo $konten?></textarea>
 									</div>
 
 									<div class="col-12 d-flex justify-content-center">
@@ -148,6 +148,12 @@ foreach($result as $artikel){
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>
+<script type="text/javascript">
+	CKEDITOR.replace('kontenku', {
+		filebrowserUploadMethod:"form",
+		filebrowserUploadUrl:"upload.php"
+	});
+</script>

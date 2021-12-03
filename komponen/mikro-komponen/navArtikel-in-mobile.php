@@ -1,7 +1,7 @@
 <div class="nav-in-mobile col-12 justify-content-center">
 
 	<div class="col-6 text-end p-3 m-2">
-		<?
+		<?php
 		$query = "SELECT * FROM artikel WHERE id_artikel<$idArtikel ORDER BY id_artikel DESC LIMIT 1";
 		$result = mysqli_query($db,$query);
 
@@ -18,7 +18,7 @@
 		}
 		?>
 		<p>Artikel Sebelumnya</p>
-		<a <?=$linkNav?> class="text-decoration-none"><?
+		<a <?php echo $linkNav?> class="text-decoration-none"><?php
 		if (strlen($artikel['judul'])>40) {
 			echo substr($artikel['judul'],0,40)."...";
 
@@ -27,7 +27,7 @@
 </div>
 
 <div class="col-6 p-3 m-2">
-	<?
+	<?php
 	$query = "SELECT * FROM artikel WHERE id_artikel>$idArtikel ORDER BY id_artikel ASC LIMIT 1";
 	$result = mysqli_query($db,$query);
 
@@ -47,7 +47,7 @@
 	}
 	?>
 	<p>Artikel Selanjutnya</p>
-	<a <?=$linkNav?> class="text-decoration-none"><?
+	<a <?php echo $linkNav?> class="text-decoration-none"><?php
 	if (strlen($artikel['judul'])>40) {
 		echo substr($artikel['judul'],0,40)."...";
 

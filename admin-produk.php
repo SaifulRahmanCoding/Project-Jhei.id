@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -14,17 +14,17 @@ if ($sessionStatus == false) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>List Produk</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 			<!-- Page content-->
 			<div class="container-fluid">
 				<!-- konten -->
@@ -60,7 +60,7 @@ if ($sessionStatus == false) {
 									</thead>
 
 									<tbody>
-										<?
+										<?php
 
 										$query= "SELECT * FROM produk ORDER BY id_produk DESC";
 										$result=mysqli_query($db, $query);
@@ -80,38 +80,38 @@ if ($sessionStatus == false) {
 											?>
 
 											<tr>
-												<th scope="row"><?=$i++?></th>
+												<th scope="row"><?php echo $i++?></th>
 
-												<td class="foto-list"><img src="<?=$produk['foto']?>" alt="error"></td>
+												<td class="foto-list"><img src="<?php echo $produk['foto']?>" alt="error"></td>
 
-												<td><?if (strlen($produk['nama'])>35) {
+												<td><?php if (strlen($produk['nama'])>35) {
 													echo substr($produk['nama'],0,35)."...";
 
 												}else{echo $produk['nama'];}?></td>
-												<?
+												<?php
 												$harga_database = $produk['harga'];
 												$format_harga = number_format($harga_database,0,",",".")
 												?>
-												<td>Rp <?=$format_harga?></td>
-												<td><?=$produk['berat']?> gram</td>
-												<td><?=$produk['stok']?></td>
+												<td>Rp <?php echo $format_harga?></td>
+												<td><?php echo $produk['berat']?> gram</td>
+												<td><?php echo $produk['stok']?></td>
 
-												<td><?if (strlen($produk['caption'])>100) {
+												<td><?php if (strlen($produk['caption'])>100) {
 													echo substr($produk['caption'],0,100)."...";
 												}else{echo $produk['caption'];}?></td>
 
 												<td>
-													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_produk.php?id_produk=<?=$produk['id_produk']?>"><i class="fas fa-edit"></i>
+													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_produk.php?id_produk=<?php echo $produk['id_produk']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp
 
-													<a class="card-text text-decoration-none text-danger fs-6" href="delete_produk.php?id_produk=<?=$produk['id_produk']?>" onclick="return confirm_delete()">
+													<a class="card-text text-decoration-none text-danger fs-6" href="delete_produk.php?id_produk=<?php echo $produk['id_produk']?>" onclick="return confirm_delete()">
 														<i class="fa fa-trash-alt"></i>
 													</a>
 												</td>
 
 											</tr>
 
-										<?}?>
+										<?php }?>
 
 									</tbody>
 								</table>
@@ -126,6 +126,6 @@ if ($sessionStatus == false) {
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>

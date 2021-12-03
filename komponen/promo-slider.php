@@ -8,7 +8,7 @@
 		<!-- strat row -->
 		<div id="autoWidth" class="cs-hidden mb-4 mt-2">
 
-			<?
+			<?php
 				// pemanggilan data dari tabel promo
 			$query= "SELECT * FROM promo ORDER BY id_promo DESC";
 			$result = mysqli_query($db, $query);
@@ -36,29 +36,29 @@
 				<div class="slider">
 					<div class="card mb-2 shadow-sm">
 						<div class="foto-promo">
-							<img src='<?=$promo['foto']?>' class='card-img-top'>
+							<img src='<?php echo $promo['foto']?>' class='card-img-top'>
 							<div class="segitiga"></div>
-							<p class="diskon">Diskon<br><?=round($diskon,1)?>%</p>
+							<p class="diskon">Diskon<br><?php echo round($diskon,1)?>%</p>
 						</div>
 						<div class="card-body">
 							<p class="card-title fw-bolder">
-								<?
+								<?php
 								if (strlen($promo['nama_promo'])>33) {
 									echo substr($promo['nama_promo'],0,33)."...";
 
 								}else{echo $promo['nama_promo'];}
 								?>
 							</p>
-							<a class="card-text fw-bolder fs-6 text-decoration-none text-dark">Rp. <?=$format_promo?></a><br>
-							<a class="card-text text-decoration-line-through text-dark">Rp. <?=$format_normal?></a> 
+							<a class="card-text fw-bolder fs-6 text-decoration-none text-dark">Rp. <?php echo $format_promo?></a><br>
+							<a class="card-text text-decoration-line-through text-dark">Rp. <?php echo $format_normal?></a> 
 							<p class="mt-3 mb-2 pb-0 d-flex justify-content-center">
-								<a href="detail.php?id_promo=<?=$promo['id_promo']?>" class="detail text-decoration-none fw-bolder">DETAIL</a>
+								<a href="detail.php?id_promo=<?php echo $promo['id_promo']?>" class="detail text-decoration-none fw-bolder">DETAIL</a>
 							</p>
 						</div>
 					</div>
 				</div>
 				<!-- end box promo -->
-				<?}?>
+				<?php } ?>
 				<!-- end foreach -->
 			</div>
 			<!-- end row -->

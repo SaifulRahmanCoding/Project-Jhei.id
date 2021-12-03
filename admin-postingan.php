@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -14,17 +14,17 @@ if ($sessionStatus == false) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>List Postingan</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 			<!-- Page content-->
 			<div class="container-fluid">
 				<!-- konten -->
@@ -60,7 +60,7 @@ if ($sessionStatus == false) {
 									</thead>
 
 									<tbody>
-										<?
+										<?php
 
 										$query= "SELECT * FROM artikel ORDER BY id_artikel DESC";
 										$result=mysqli_query($db, $query);
@@ -80,32 +80,32 @@ if ($sessionStatus == false) {
 											?>
 
 											<tr>
-												<th scope="row"><?=$i++?></th>
-												<td class="foto-list"><img src="<?=$artikel['foto']?>" alt="error"></td>
+												<th scope="row"><?php echo $i++?></th>
+												<td class="foto-list"><img src="<?php echo $artikel['foto']?>" alt="error"></td>
 
-												<td><?if (strlen($artikel['judul'])>40) {
+												<td><?php if (strlen($artikel['judul'])>40) {
 													echo substr($artikel['judul'],0,40)."...";
 
 												}else{echo $artikel['judul'];}?></td>
-												<td><?=$artikel['jenis_postingan']?></td>
-												<?
+												<td><?php echo $artikel['jenis_postingan']?></td>
+												<?php
 												require('komponen/mikro-komponen/fungsi-ubah-tanggal.php');
 												?>
-												<td><? echo "$hari $bulan $tahun"; ?></td>
-												<td><?=$artikel['keywords']?></td>
-												<td><? echo substr($artikel['konten'],0,100)."..."; ?></td>
+												<td><?php echo "$hari $bulan $tahun"; ?></td>
+												<td><?php echo $artikel['keywords']?></td>
+												<td><?php echo substr($artikel['konten'],0,100)."..."; ?></td>
 												<td>
-													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_artikel.php?id_artikel=<?=$artikel['id_artikel']?>"><i class="fas fa-edit"></i>
+													<a class="card-text text-decoration-none text-success fs-6" href="form_edit_artikel.php?id_artikel=<?php echo $artikel['id_artikel']?>"><i class="fas fa-edit"></i>
 													</a>&nbsp | &nbsp
 
-													<a class="card-text text-decoration-none text-danger fs-6" href="delete_artikel.php?id_artikel=<?=$artikel['id_artikel']?>" onclick="return confirm_delete()">
+													<a class="card-text text-decoration-none text-danger fs-6" href="delete_artikel.php?id_artikel=<?php echo $artikel['id_artikel']?>" onclick="return confirm_delete()">
 														<i class="fa fa-trash-alt"></i>
 													</a>
 
 												</td>
 											</tr>
 
-											<?}?>
+											<?php }?>
 
 										</tbody>
 									</table>
@@ -120,6 +120,6 @@ if ($sessionStatus == false) {
 
 			</div>
 		</div>
-		<?require('config/scriptAdmin.php');?>
+		<?php require('config/scriptAdmin.php');?>
 	</body>
 	</html>

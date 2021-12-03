@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -13,19 +13,19 @@ if ($sessionStatus == false) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Halaman Admin</title>
-	<?
+	<title>Dashboard</title>
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -39,7 +39,7 @@ if ($sessionStatus == false) {
 
 						<div class="col-12 col-sm-6 col-lg-4 p-2 d-flex justify-content-center">
 							<div class="bungkus shadow-sm d-flex col-10 justify-content-center">
-								<?
+								<?php
 								$query = "SELECT * FROM produk";
 								$result = mysqli_query($db,$query);
 
@@ -47,7 +47,7 @@ if ($sessionStatus == false) {
 								?>
 
 								<div class="col-5 box-produk p-2 pt-4 pb-4 text-center">
-									<h1 class="fw-bolder"><?=$jumlah_produk?></h1>
+									<h1 class="fw-bolder"><?php echo $jumlah_produk?></h1>
 									<a class="text-decoration-none text-secondary fw-bolder">Produk</a>
 								</div>
 
@@ -61,7 +61,7 @@ if ($sessionStatus == false) {
 						<div class="col-12 col-sm-6 col-lg-4 p-2 d-flex justify-content-center">
 							<div class="bungkus2 shadow-sm d-flex col-10 justify-content-center">
 
-								<?
+								<?php
 								$query = "SELECT * FROM artikel";
 								$result = mysqli_query($db,$query);
 
@@ -69,7 +69,7 @@ if ($sessionStatus == false) {
 								?>
 
 								<div class="col-5 box-postingan p-2 pt-4 pb-4 text-center">
-									<h1 class="fw-bolder"><?=$jumlah_postingan?></h1>
+									<h1 class="fw-bolder"><?php echo $jumlah_postingan?></h1>
 									<a class="text-decoration-none text-secondary fw-bolder">Artikel</a>
 								</div>
 
@@ -82,7 +82,7 @@ if ($sessionStatus == false) {
 						<div class="col-12 col-sm-6 col-lg-4 p-2 d-flex justify-content-center">
 							<div class="bungkus3 shadow-sm d-flex col-10 justify-content-center">
 
-								<?
+								<?php
 								$query = "SELECT * FROM carousel";
 								$result = mysqli_query($db,$query);
 
@@ -90,7 +90,7 @@ if ($sessionStatus == false) {
 								?>
 
 								<div class="col-5 box-carousel p-2 pt-4 pb-4 text-center">
-									<h1 class="fw-bolder"><?=$jumlah_carousel?></h1>
+									<h1 class="fw-bolder"><?php echo $jumlah_carousel?></h1>
 									<a class="text-decoration-none text-secondary fw-bolder">Promo</a>
 								</div>
 
@@ -107,6 +107,6 @@ if ($sessionStatus == false) {
 		</div>
 	</div>
 
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>

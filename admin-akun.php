@@ -1,4 +1,4 @@
-<?
+<?php
 // koneksi ke database
 require_once('koneksi.php');
 
@@ -13,18 +13,18 @@ if ($sessionStatus == false) {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>List Produk</title>
-	<?
+	<title>List Akun Admin</title>
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			<!-- top nav -->
-		<? require('komponen/top-nav-admin.php'); ?>
+		<?php require('komponen/top-nav-admin.php'); ?>
 			<!-- Page content-->
 		<div class="container-fluid">
 			<!-- konten -->
@@ -56,24 +56,24 @@ if ($sessionStatus == false) {
 								</thead>
 
 								<tbody>
-								<?
+								<?php
 								$query= "SELECT * FROM admin ORDER BY id DESC";
 								$result=mysqli_query($db, $query);
 									// foreach
 								$i=1;
 								foreach ($result as $akun) {?>
 								<tr>
-									<th scope="row"><?=$i++?></th>
-									<td><?=$akun['nama']?></td>
-									<td><?=$akun['email']?></td>
+									<th scope="row"><?php echo $i++?></th>
+									<td><?php echo $akun['nama']?></td>
+									<td><?php echo $akun['email']?></td>
 									<td>
-										<a class="card-text text-decoration-none text-danger fs-6" href="delete_akun.php?id=<?=$akun['id']?>" onclick="return confirm_delete()">
+										<a class="card-text text-decoration-none text-danger fs-6" href="delete_akun.php?id=<?php echo $akun['id']?>" onclick="return confirm_delete()">
 											<i class="fa fa-trash-alt"></i>
 										</a>
 									</td>
 								</tr>
 
-								<?}
+								<?php }
 
 								?>
 								</tbody>
@@ -85,6 +85,6 @@ if ($sessionStatus == false) {
 		</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>

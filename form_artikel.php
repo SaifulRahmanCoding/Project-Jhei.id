@@ -1,4 +1,4 @@
-<?
+<?php
 // menegcek dan mendapatkan data session
 require_once('session_check.php');
 
@@ -12,18 +12,18 @@ if ($sessionStatus == false) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Input Postingan</title>
-	<?
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -70,8 +70,8 @@ if ($sessionStatus == false) {
 
 									<div class="form-group mb-3">
 										<label for="tgl_posting" class="mb-2">Tanggal Posting : </label>
-										<input name="tgl_posting" id="tgl_posting" value="<? echo date("Y/m/d");?>" class="form-control" type="hidden" required>
-										<label class="fw-bolder"><? echo date("Y/m/d");?></label>
+										<input name="tgl_posting" id="tgl_posting" value="<?php echo date("Y/m/d");?>" class="form-control" type="hidden" required>
+										<label class="fw-bolder"><?php echo date("Y/m/d");?></label>
 									</div>
 
 									<div class="form-group mb-3">
@@ -81,7 +81,7 @@ if ($sessionStatus == false) {
 
 									<div class="form-group mb-3">
 										<label for="konten" class="mb-2">Konten</label>
-										<textarea name="konten" class="ckeditor form-control" id="ckeditor" rows="8" placeholder="isi konten"></textarea>
+										<textarea name="konten" class="ckeditor form-control" id="kontenku" rows="8" placeholder="isi konten"></textarea>
 									</div>
 
 									<div class="col-12 d-flex justify-content-center">
@@ -104,6 +104,13 @@ if ($sessionStatus == false) {
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>
+
+<script type="text/javascript">
+	CKEDITOR.replace('kontenku', {
+		filebrowserUploadMethod:"form",
+		filebrowserUploadUrl:"upload.php"
+	});
+</script>

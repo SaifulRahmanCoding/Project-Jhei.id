@@ -1,4 +1,4 @@
-<?
+<?php
 $tgl = explode("-", $artikel['tanggal']);
 $tahun = $tgl[0]; 
 $bulan = $tgl[1];

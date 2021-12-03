@@ -1,4 +1,4 @@
-<?
+<?php
 $halaman = 'artikel';
 // koneksi ke database
 require_once('koneksi.php');
@@ -19,17 +19,17 @@ $data = mysqli_fetch_assoc($data);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	<? require_once('komponen/seo.php'); ?>
+	<?php require_once('komponen/seo.php'); ?>
 
-	<title>Artikel Septutar Produk dan Info</title>
-	<?
+	<title>Postingan Seputar Artikel dan Produk</title>
+	<?php
 	require('config/style.php');
 	require('config/script.php');
 	?>
 </head>
 <body>
 	<!-- header -->
-	<?
+	<?php
 	require ('komponen/kontak-wa.php');
 	require('komponen/mikro-komponen/pesan-modal.php');
 	require('komponen/navbar.php');
@@ -62,18 +62,18 @@ $data = mysqli_fetch_assoc($data);
 
 			</div>
 			<div class="row mt-4">
-				<? if (empty($_POST['cari'])) { 
+				<?php if (empty($_POST['cari'])) { 
 					echo " ";
 				 }
 				 else{ ?>
 				<div class="hasil-pencarian mb-3">
 					<span class="fw-bolder fs-5">
-						Hasil Pencarian : "<?=$_POST['cari']?>"
+						Hasil Pencarian : "<?php echo $_POST['cari']?>"
 					</span>
 				</div>
-				<?}?>
+				<?php }?>
 
-				<?
+				<?php
 					// filter biar dak muncul error saat load halaman pertama kali
 				if (empty($_POST['filter'])) {
 					$form_filter = "";
@@ -120,7 +120,7 @@ $data = mysqli_fetch_assoc($data);
 		</div>
 
 	</div>
-	<?
+	<?php
 	require('komponen/footer.php');
 	?>
 </body>

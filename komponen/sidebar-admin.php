@@ -1,9 +1,9 @@
 <!-- Sidebar-->
 <div class="border-end" style="position: sticky; top: 0px; max-width: 250px;" id="sidebar-wrapper">
 
-	<div class="sidebar-heading border-bottom text-white text-center pe-0 ps-0 pe-0 pt-2 pb-2">
-		<img src="img/jhei.id.png" style="width: 50px;" alt="">
-		<p class="m-0">ADMIN - <?=$_SESSION['name']?></p>
+	<div class="sidebar-heading border-bottom text-white text-center pe-0 ps-0 pe-0 pt-4 pb-2">
+		<img src="img/jhei.id.png" style="width: 100px;" alt="">
+		<p class="m-0">ADMIN - <?php echo $_SESSION['name']?></p>
 	</div>
 
 	<div class="list-group list-group-flush">

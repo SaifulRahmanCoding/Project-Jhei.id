@@ -1,4 +1,4 @@
-<?
+<?php
 // menmapilkan file koneksi
 require_once('koneksi.php');
 
@@ -35,19 +35,19 @@ foreach($result as $carousel){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Form Edit</title>
-	<?
+	<title>Form Edit Promo</title>
+	<?php
 	require('config/styleAdmin.php');
 	?>
 </head>
 <body>
 	<div class="d-flex" id="wrapper" style="align-items: flex-start;">
-		<? require('komponen/sidebar-admin.php'); ?>
+		<?php require('komponen/sidebar-admin.php'); ?>
 		<!-- Page content wrapper-->
 		<div id="page-content-wrapper">
 			
 			<!-- top nav -->
-			<? require('komponen/top-nav-admin.php'); ?>
+			<?php require('komponen/top-nav-admin.php'); ?>
 
 			<!-- Page content-->
 			<div class="container-fluid">
@@ -66,10 +66,10 @@ foreach($result as $carousel){
 
 								<form action="action_edit_carousel.php" method="POST" enctype="multipart/form-data">
 
-									<input type="hidden" name="idcarousel" value='<? echo $id_carousel;?>'>
+									<input type="hidden" name="idcarousel" value='<?php echo $id_carousel;?>'>
 
 									<div class="form-group mb-3 text-center">
-										<img src="<?=$foto?>" class="preview-carosuel">
+										<img src="<?php echo $foto?>" class="preview-carosuel">
 									</div>
 
 									<div class="form-group mb-2">
@@ -86,7 +86,7 @@ foreach($result as $carousel){
 
 										<label for="ketCarousel" class="mb-2">Kode Promo/ Voucher</label>
 
-										<input name="ketCarousel" id="ketCarousel"  class="form-control" type="text" placeholder="contoh : B2GET1MERDEKA" value="<?=$kode?>" required>
+										<input name="ketCarousel" id="ketCarousel"  class="form-control" type="text" placeholder="contoh : B2GET1MERDEKA" value="<?php echo $kode?>" required>
 
 									</div>
 
@@ -109,6 +109,6 @@ foreach($result as $carousel){
 			</div>
 		</div>
 	</div>
-	<?require('config/scriptAdmin.php');?>
+	<?php require('config/scriptAdmin.php');?>
 </body>
 </html>
